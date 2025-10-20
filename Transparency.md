@@ -24,7 +24,8 @@ Official transparency and reserve attestation for **JUSDC**.
 - **Current Balance**: 2973724987.01 JUSDC
 - **Total Supply**: 37,975,000.00 JUSDC
 - **Backing Ratio**: 100% (1:1 USD Peg)
-- **Last Updated**: October 20, 2025 at 17:14 UTC
+- **Last Updated**: October 20, 2025 at 17:18 UTC
+
 
 **Contact**: [transparency@jusdc.io](mailto:transparency@jusdc.io)
 
