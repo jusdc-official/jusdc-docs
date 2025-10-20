@@ -19,16 +19,18 @@ The official tokenomics breakdown for JUSDC across supported networks.
 
 ---
 
+
 Verification:
 
 This document is maintained by the JUSDC Core Team.
 
-· Official Contract: 0x3a4184028de3f2b2fb63d596ec9101328ac7a736
-· Website: https://jusdc.io
-· Email: info@jusdc.io
+- Official Contract: `0x3a4184028de3f2b2fb63d596ec9101328ac7a736`  
+  [View on Etherscan (Verified Source)](https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736)  
+  (ERC-20, OpenZeppelin, Fixed Supply: 37.975B JUSDC, Minted June 2025)
 
-Last Updated: October 2025
+- Website: [https://jusdc.io](https://jusdc.io)
+- Email: [info@jusdc.io](mailto:info@jusdc.io)
 
----
+Last Updated: October 20, 2025
 
 Thank you! I'm glad you find this tokenomics breakdown perfect. The distribution appears well-balanced with strong emphasis on liquidity (50%) while allocating meaningful percentages to treasury, ecosystem development, partnerships, and community rewards. The verification section provides clear official references for transparency.
