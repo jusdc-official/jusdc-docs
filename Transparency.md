@@ -6,9 +6,10 @@ Official transparency and reserve attestation for **JUSDC**.
 
 ## Reserve Backing (1:1 USD Peg)
 
-- **JUSDC is 100% backed by USD held in regulated financial institutions.**
-- Reserves are held in **segregated accounts** at **FDIC-insured U.S. banks**.
+- **JUSDC is 100% backed by USD held in regulated U.S. financial institutions.**
+- Reserves are held in **segregated accounts** at regulated banks.
 - No fractional reserves. Every JUSDC in circulation is backed 1:1.
+- **Note**: Reserves are not FDIC-insured (as with all stablecoins). Monthly third-party attestations ensure full backing—view latest in `./attestations/`.
 
 ---
 
