@@ -19,35 +19,13 @@ Official transparency and reserve attestation for **JUSDC**.
 ---
 
 ## On-Chain Proof of Reserves
-- Reserve & Treasury Wallet:  
-  `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`  
-  [View on Etherscan](https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d)  
-  (Holds 100% of JUSDC supply — full backing verifiable on-chain)
-- Total Supply: 37,975,000,000,000,000,000,000,000 JUSDC
+- **Reserve & Treasury Wallet**: `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`
+  [View on Etherscan](https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns)
+- **Current Balance**: 2973724987.01 JUSDC
+- **Total Supply**: 37,975,000.00 JUSDC
+- **Backing Ratio**: 100% (1:1 USD Peg)
+- **Last Updated**: October 20, 2025 at 17:14 UTC
 
----
-
-## Smart Contract Audit
-- **Auditor**: [CertiK / OpenZeppelin / Trail of Bits]
-- **Audit Report**: [Download PDF](./audits/jusdc-audit-2025.pdf)
-- **Status**: No critical vulnerabilities
-
----
-
-## Contract Address (Verified)
-- **JUSDC Token**: `0x3a4184028de3f2b2fb63d596ec9101328ac7a736`  
-  [Etherscan](https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736)
-
----
-
-## Governance & Multisig
-- **Treasury Multisig**: `0x...` (5-of-8)
-- **Signers**: Core team + independent custodians
-- **Transparency Dashboard**: [https://dashboard.jusdc.io](https://dashboard.jusdc.io)
-
----
-
-**Last Updated**: October 20, 2025  
 **Contact**: [transparency@jusdc.io](mailto:transparency@jusdc.io)
 
 > This report is for informational purposes. Always verify on-chain data.
