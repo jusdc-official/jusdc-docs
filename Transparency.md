@@ -39,13 +39,13 @@ JUSDC is deployed across multiple chains for scalability. All contracts are Open
 ---
 
 ## On-Chain Proof of Reserves
-
-- **Reserve & Treasury Wallet**: `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`  
+- **Reserve & Treasury Wallet**: `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`
   [View on Etherscan](https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns)
-- **Current Balance**: 2,973,724,987.01 JUSDC *(auto-updated)*
+- **Current Balance**:  JUSDC
 - **Total Supply**: 37,975,000.00 JUSDC
-- **Backing Ratio**: 7,830%+ (Over-collateralized)
-- **Last Updated**: Auto-updated daily via script
+- **Backing Ratio**: 100% (1:1 USD Peg)
+- **Last Updated**: October 21, 2025 at 10:33 UTC
+
 
 ---
 
