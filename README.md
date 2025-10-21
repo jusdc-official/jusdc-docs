@@ -12,5 +12,4 @@ This repository contains transparency files required for exchange and listing ve
 📩 Contact: [info@jusdc.io](mailto:info@jusdc.io)  
 🌐 Website: [https://jusdc.io](https://jusdc.io)  
 📢 Telegram: [https://t.me/JUSDCOfficial](https://t.me/JUSDCOfficial)  
-🐦 Twitter/X: [@JUSDC_Official](https://twitter.com/JUSDC_Official)
-# Force redeploy Tue Oct 21 04:55:16 UTC 2025
+🐦 Twitter/X: [@JUSDC_Official](https://x.com/Jusdc_Official)
