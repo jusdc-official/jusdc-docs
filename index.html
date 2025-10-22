@@ -3,187 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JUSDC Ecosystem - CashMatrix Digital Asset FZE</title>
+  <title>JUSDC | Official Token Page</title>
+  <meta name="description" content="JUSDC Real-World Asset backed stablecoin on Ethereum, Polygon, Base.">
   <style>
-    :root {
-      --primary-color: #2E8B57;
-      --bg-light: #f9f9f9;
-      --bg-dark: #121212;
-      --text-light: #333;
-      --text-dark: #fff;
-      --card-light: #fff;
-      --card-dark: #1e1e1e;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: background-color 0.3s, color 0.3s;
-    }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-    header img {
-      height: 50px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--primary-color);
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background-color: var(--card-light);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
-    }
-    body.dark-mode .card {
-      background-color: var(--card-dark);
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .card h2 {
-      margin-top: 0;
-      color: var(--primary-color);
-    }
-    body.dark-mode .card h2 {
-      color: #64d18f;
-    }
-    .card a {
-      text-decoration: none;
-      color: var(--primary-color);
-      font-weight: bold;
-    }
-    body.dark-mode .card a {
-      color: #64d18f;
-    }
-    footer {
-      background-color: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .toggle-btn {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      background-color: white;
-      color: var(--primary-color);
-      transition: background-color 0.3s, color 0.3s;
-      margin-top: 10px;
-    }
-    body.dark-mode .toggle-btn {
-      background-color: #64d18f;
-      color: var(--bg-dark);
-    }
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-    body.dark-mode iframe {
-      border: 1px solid #555;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      main {
-        margin: 20px auto;
-      }
-      iframe {
-        height: 400px;
-      }
-    }
-    @media (max-width: 480px) {
-      iframe {
-        height: 300px;
-      }
-    }
+    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+    .logo { max-width: 200px; }
+    a { color: #0066cc; }
   </style>
 </head>
 <body>
-  <header>
-    <div>
-      <img src="https://jusdc.io/logos/cashmatrix.png" alt="CashMatrix Logo">
-      <span>CashMatrix Digital Asset FZE</span>
-    </div>
-    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-  </header>
+  <img class="logo" src="https://gateway.pinata.cloud/ipfs/QmaEE6jZ8E8cCQ73yA7cdSyCzAjMHEdy5RgXpgmKQn2kMp" alt="JUSDC Logo">
+  <div class="title">JUSDC</div>
+  <h1>JUSDC Token</h1>
+  <p><strong>Symbol:</strong> JUSDC</p>
+  <p><strong>Name:</strong> JUSDC</p>
+  <p><strong>Whitepaper:</strong> <a href="/whitepaper.pdf" download>Download PDF (v1.0)</a></p>
+  <p><strong>Documentation:</strong> <a href="https://jusdc-official.github.io/jusdc-docs">View Tokenomics & Transparency</a></p>
+  <p>📊 <a href="https://coinranking.com/coin/LRTy40dlE+jusdc-jusdc" target="_blank">View on CoinRanking</a></p>
+  <p>📈 <a href="https://www.coingecko.com/en/coins/jusdc" target="_blank">View on CoinGecko</a></p>
 
-  <main>
-    <h1>Welcome to the JUSDC Ecosystem</h1>
-    <div class="cards">
-      <div class="card">
-        <h2>Attestations</h2>
-        <p>Official attestation documents for JUSDC. Preview the PDF below:</p>
-        <a href="./attestations/jusdcAttestation.pdf" target="_blank">Download PDF</a>
-        <iframe src="./attestations/jusdcAttestation.pdf"></iframe>
-      </div>
+  <h2>Tokenomics</h2>
+  <ul>
+    <li><strong>Liquidity (50%):</strong> DEX pools (e.g., Uniswap) for trading stability.</li>
+    <li><strong>Treasury/Reserves (20%):</strong> USD-backed reserves in regulated institutions.</li>
+    <li><strong>Ecosystem Development (15%):</strong> Multichain scaling, developer grants.</li>
+    <li><strong>Partnerships/Listings (10%):</strong> Exchange listings and strategic partnerships.</li>
+    <li><strong>Community Rewards (5%):</strong> Incentives for holders and community.</li>
+  </ul>
+  <p><strong>Total Supply:</strong> 37.975B JUSDC (1:1 USD-backed, 7,830%+ over-collateralized)</p>
+  <p>
+    <a href="https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736">Verify Contract</a> | 
+    <a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns">Verify Reserves</a>
+  </p>
 
-      <div class="card">
-        <h2>Audits</h2>
-        <p>Smart contract audits and verification reports.</p>
-        <a href="./audits/README.md" target="_blank">View Audits</a>
-      </div>
-
-      <div class="card">
-        <h2>Tokenomics</h2>
-        <p>Learn about JUSDC supply, distribution, and economics.</p>
-        <a href="./Tokenomics.md" target="_blank">View Tokenomics</a>
-      </div>
-
-      <div class="card">
-        <h2>Transparency</h2>
-        <p>Details about reserves, treasury, and financial transparency.</p>
-        <a href="./Transparency.md" target="_blank">View Transparency</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 CashMatrix Digital Asset FZE | <a href="https://jusdc.io" style="color:white;">jusdc.io</a>
-  </footer>
+  <p id="price"></p>
 
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=jusdc&vs_currencies=usd")
+      .then(response => response.json())
+      .then(data => {
+        const price = data?.jusdc?.usd;
+        if (price) {
+          document.getElementById('price').innerHTML = `<strong>Price:</strong> $${price} USD`;
+        } else {
+          document.getElementById('price').innerHTML = "Price data not available";
+        }
+      })
+      .catch(() => {
+        document.getElementById('price').innerHTML = "Error fetching price";
+      });
   </script>
 </body>
 </html>
