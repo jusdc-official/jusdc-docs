@@ -6,37 +6,65 @@
   <title>JUSDC | Official Token Page</title>
   <meta name="description" content="JUSDC Real-World Asset backed stablecoin on Ethereum, Polygon, Base.">
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-    .logo { max-width: 200px; }
-    a { color: #0066cc; }
+    body { 
+      font-family: 'Arial', sans-serif; 
+      text-align: center; 
+      margin: 50px; 
+      background: #f5f7fa; 
+      color: #0d3b66; 
+    }
+    .logo { max-width: 200px; margin-bottom: 20px; }
+    h1 { color: #0d3b66; margin-bottom: 5px; }
+    h2 { color: #1e7f7f; margin-top: 30px; }
+    a { color: #1e7f7f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { list-style: none; padding: 0; }
+    ul li { margin: 8px 0; }
+    .tokenomics li strong { color: #0d3b66; }
+    #price { margin-top: 15px; font-size: 18px; font-weight: bold; color: #1e7f7f; }
+    .section { margin-bottom: 40px; }
+    .pdf-link { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #1e7f7f; color: #fff; border-radius: 5px; text-decoration: none; }
+    .pdf-link:hover { background: #145656; }
   </style>
 </head>
 <body>
   <img class="logo" src="https://gateway.pinata.cloud/ipfs/QmaEE6jZ8E8cCQ73yA7cdSyCzAjMHEdy5RgXpgmKQn2kMp" alt="JUSDC Logo">
-  <div class="title">JUSDC</div>
+
   <h1>JUSDC Token</h1>
   <p><strong>Symbol:</strong> JUSDC</p>
   <p><strong>Name:</strong> JUSDC</p>
-  <p><strong>Whitepaper:</strong> <a href="/whitepaper.pdf" download>Download PDF (v1.0)</a></p>
-  <p><strong>Documentation:</strong> <a href="https://jusdc-official.github.io/jusdc-docs">View Tokenomics & Transparency</a></p>
-  <p>📊 <a href="https://coinranking.com/coin/LRTy40dlE+jusdc-jusdc" target="_blank">View on CoinRanking</a></p>
-  <p>📈 <a href="https://www.coingecko.com/en/coins/jusdc" target="_blank">View on CoinGecko</a></p>
 
-  <h2>Tokenomics</h2>
-  <ul>
-    <li><strong>Liquidity (50%):</strong> DEX pools (e.g., Uniswap) for trading stability.</li>
-    <li><strong>Treasury/Reserves (20%):</strong> USD-backed reserves in regulated institutions.</li>
-    <li><strong>Ecosystem Development (15%):</strong> Multichain scaling, developer grants.</li>
-    <li><strong>Partnerships/Listings (10%):</strong> Exchange listings and strategic partnerships.</li>
-    <li><strong>Community Rewards (5%):</strong> Incentives for holders and community.</li>
-  </ul>
-  <p><strong>Total Supply:</strong> 37.975B JUSDC (1:1 USD-backed, 7,830%+ over-collateralized)</p>
-  <p>
-    <a href="https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736">Verify Contract</a> | 
-    <a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns">Verify Reserves</a>
-  </p>
+  <div class="section">
+    <a class="pdf-link" href="/jusdcAttestation.pdf" target="_blank">📄 View Attestation PDF</a>
+    <br>
+    <a class="pdf-link" href="/whitepaper.pdf" download>📘 Download Whitepaper (v1.0)</a>
+  </div>
 
-  <p id="price"></p>
+  <div class="section">
+    <p><strong>Documentation:</strong> <a href="https://jusdc-official.github.io/jusdc-docs">View Tokenomics & Transparency</a></p>
+    <p>📊 <a href="https://coinranking.com/coin/LRTy40dlE+jusdc-jusdc" target="_blank">View on CoinRanking</a></p>
+    <p>📈 <a href="https://www.coingecko.com/en/coins/jusdc" target="_blank">View on CoinGecko</a></p>
+  </div>
+
+  <div class="section">
+    <h2>Tokenomics</h2>
+    <ul class="tokenomics">
+      <li><strong>Liquidity (50%):</strong> DEX pools (e.g., Uniswap) for trading stability.</li>
+      <li><strong>Treasury/Reserves (20%):</strong> USD-backed reserves in regulated institutions.</li>
+      <li><strong>Ecosystem Development (15%):</strong> Multichain scaling, developer grants.</li>
+      <li><strong>Partnerships/Listings (10%):</strong> Exchange listings and strategic partnerships.</li>
+      <li><strong>Community Rewards (5%):</strong> Incentives for holders and community.</li>
+    </ul>
+    <p><strong>Total Supply:</strong> 37.975B JUSDC (1:1 USD-backed, 7,830%+ over-collateralized)</p>
+  </div>
+
+  <div class="section">
+    <p>
+      <a href="https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736">Verify Contract</a> | 
+      <a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns">Verify Reserves</a>
+    </p>
+    <p id="price">Fetching live price...</p>
+  </div>
 
   <script>
     fetch("https://api.coingecko.com/api/v3/simple/price?ids=jusdc&vs_currencies=usd")
@@ -44,7 +72,7 @@
       .then(data => {
         const price = data?.jusdc?.usd;
         if (price) {
-          document.getElementById('price').innerHTML = `<strong>Price:</strong> $${price} USD`;
+          document.getElementById('price').innerHTML = `💰 <strong>Price:</strong> $${price} USD`;
         } else {
           document.getElementById('price').innerHTML = "Price data not available";
         }
