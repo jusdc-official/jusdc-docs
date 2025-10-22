@@ -1,36 +1,73 @@
-JUSDC Tokenomics
+# 💠 JUSDC Tokenomics
 
-The official tokenomics breakdown for JUSDC across supported networks.
-
----
-
-📊 Distribution
-
-· Liquidity Pool → 50%
-    Ensures stability and deep trading pairs on Uniswap, Base, and Polygon.
-· Treasury & Reserves → 20%
-    For long-term project sustainability, emergency funds, and operations.
-· Ecosystem Development → 15%
-    Dedicated to developer grants, tools, and ecosystem growth.
-· Partnerships & Listings → 10%
-    Covers CEX/DEX listings, partnerships, and future integrations.
-· Community Rewards → 5%
-    Incentives for loyal holders, staking rewards, and airdrops.
+The official tokenomics breakdown for **JUSDC** across supported blockchain networks.  
+Issued and maintained by **CashMatrix Digital Asset FZE** — the official issuer of JUSDC.
 
 ---
 
+## 📊 Distribution Overview
 
-Verification:
+| Category | Allocation | Description |
+|-----------|-------------|--------------|
+| **Liquidity Pool** | **50%** | Ensures market stability and deep trading pairs across Uniswap, Base, and Polygon. |
+| **Treasury & Reserves** | **20%** | Maintained for operational sustainability, emergency reserves, and financial backing. |
+| **Ecosystem Development** | **15%** | Dedicated to developer grants, ecosystem tools, integrations, and long-term growth. |
+| **Partnerships & Listings** | **10%** | Allocated for CEX/DEX listings, marketing, and strategic partnerships. |
+| **Community Rewards** | **5%** | Supports loyal holders, staking incentives, and promotional airdrops. |
 
-This document is maintained by the JUSDC Core Team.
+---
 
-- Official Contract: `0x3a4184028de3f2b2fb63d596ec9101328ac7a736`  
-  [View on Etherscan (Verified Source)](https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736)  
-  (ERC-20, OpenZeppelin, Fixed Supply: 37.975B JUSDC, Minted June 2025)
+## 🪙 Token Details
 
-- Website: [https://jusdc.io](https://jusdc.io)
-- Email: [info@jusdc.io](mailto:info@jusdc.io)
+| Parameter | Value |
+|------------|--------|
+| **Token Name** | JUSDC |
+| **Ticker Symbol** | JUSDC |
+| **Standard** | ERC-20 (OpenZeppelin) |
+| **Total Supply** | 37,975,000 JUSDC |
+| **Decimals** | 6 |
+| **Mint Date** | June 2025 |
+| **Issuer** | CashMatrix Digital Asset FZE |
+| **Primary Network** | Ethereum Mainnet |
 
-Last Updated: October 20, 2025
+---
 
-Thank you! I'm glad you find this tokenomics breakdown perfect. The distribution appears well-balanced with strong emphasis on liquidity (50%) while allocating meaningful percentages to treasury, ecosystem development, partnerships, and community rewards. The verification section provides clear official references for transparency.
+## 🔗 Contract Verification
+
+| Description | Details |
+|--------------|----------|
+| **Official Contract Address** | `0x3a4184028de3f2b2fb63d596ec9101328ac7a736` |
+| **Verified Source Code** | [View on Etherscan](https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736) |
+| **Audit Provider** | [Cyberscope.io Audit Report](https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736) |
+
+---
+
+## 🌐 Network Deployments
+
+| Chain | Status | Explorer |
+|--------|---------|-----------|
+| **Ethereum Mainnet** | ✅ Active | [View on Etherscan](https://etherscan.io/token/0x3a4184028de3f2b2fb63d596ec9101328ac7a736) |
+| **Base Network** | 🔄 Deploying Soon | [View on BaseScan](https://basescan.org/token/0xC6b9F1360a4C50DB8EccBCAc448b51737B101AA5) |
+| **Polygon Network** | 🔄 Deploying Soon | [View on PolygonScan](https://polygonscan.com/token/0xFfF13F7Df6db0811A45b162D5CA742f970888eE0) |
+
+---
+
+## 🧾 Governance & Transparency
+
+- All JUSDC tokens are pre-minted and non-inflationary.  
+- Treasury transactions and liquidity allocations are fully transparent and verifiable on-chain.  
+- Monthly attestations and quarterly audits are published in the [`attestations/`](./attestations/) and [`audits/`](./audits/) folders.
+
+---
+
+## 📨 Contact & Resources
+
+- 🌐 Website: [https://jusdc.io](https://jusdc.io)  
+- 📧 Email: [info@jusdc.io](mailto:info@jusdc.io)  
+- 🧭 Documentation: [https://github.com/jusdc/jusdc-docs](https://github.com/jusdc/jusdc-docs)
+
+---
+
+> **Last Updated:** October 20, 2025  
+> *This document is maintained by the JUSDC Core Team.*  
+> All information is accurate as of publication and may be updated upon new network deployments.
