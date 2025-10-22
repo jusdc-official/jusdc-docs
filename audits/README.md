@@ -1,4 +1,4 @@
-# 🪙 JUSDC (Just USD Coin)
+# 🪙 JUSDC (JUSDC)
 
 **Official Audit Report:**  
 🔗 [View Cyberscope Audit Report](https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736)
