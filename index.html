@@ -21,10 +21,10 @@
     ul { list-style: none; padding: 0; }
     ul li { margin: 8px 0; }
     .tokenomics li strong { color: #0d3b66; }
-    #price { margin-top: 15px; font-size: 18px; font-weight: bold; color: #1e7f7f; }
     .section { margin-bottom: 40px; }
     .pdf-link { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #1e7f7f; color: #fff; border-radius: 5px; text-decoration: none; }
     .pdf-link:hover { background: #145656; }
+    iframe { border: none; margin-top: 15px; width: 200px; height: 50px; }
   </style>
 </head>
 <body>
@@ -63,23 +63,9 @@
       <a href="https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736">Verify Contract</a> | 
       <a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns">Verify Reserves</a>
     </p>
-    <p id="price">Fetching live price...</p>
+    <h2>Live JUSDC Price</h2>
+    <iframe src="https://jusdc-price.vercel.app" title="JUSDC Live Price"></iframe>
   </div>
 
-  <script>
-    fetch("https://api.coingecko.com/api/v3/simple/price?ids=jusdc&vs_currencies=usd")
-      .then(response => response.json())
-      .then(data => {
-        const price = data?.jusdc?.usd;
-        if (price) {
-          document.getElementById('price').innerHTML = `💰 <strong>Price:</strong> $${price} USD`;
-        } else {
-          document.getElementById('price').innerHTML = "Price data not available";
-        }
-      })
-      .catch(() => {
-        document.getElementById('price').innerHTML = "Error fetching price";
-      });
-  </script>
 </body>
 </html>
