@@ -52,6 +52,6 @@ JUSDC is deployed across multiple chains for scalability. All contracts are Open
 
 **Contact**: [transparency@jusdc.io](mailto:transparency@jusdc.io)
 ## Whitepaper
-[Download JUSDC Whitepaper](https://jusdc-whitepaper.vercel.app/whitepaper.pdf)
+[Download JUSDC Whitepaper](https://whitepaper-jusdc.vercel.app)
 
 > This report is for informational purposes only. Always verify on-chain data.
