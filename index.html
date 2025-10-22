@@ -3,70 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JUSDC | Official Token Page</title>
-  <meta name="description" content="JUSDC Real-World Asset backed stablecoin on Ethereum, Polygon, Base.">
+  <title>JUSDC Documentation | CashMatrix Digital Asset FZE</title>
+  <meta name="description" content="Official documentation and attestations for JUSDC — a USD-backed stablecoin by CashMatrix Digital Asset FZE.">
   <style>
-    body { 
-      font-family: 'Arial', sans-serif; 
-      text-align: center; 
-      margin: 50px; 
-      background: #f5f7fa; 
-      color: #0d3b66; 
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #0d3b66;
     }
-    .logo { max-width: 200px; margin-bottom: 20px; }
-    h1 { color: #0d3b66; margin-bottom: 5px; }
-    h2 { color: #1e7f7f; margin-top: 30px; }
-    a { color: #1e7f7f; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { list-style: none; padding: 0; }
-    ul li { margin: 8px 0; }
-    .tokenomics li strong { color: #0d3b66; }
-    .section { margin-bottom: 40px; }
-    .pdf-link { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #1e7f7f; color: #fff; border-radius: 5px; text-decoration: none; }
-    .pdf-link:hover { background: #145656; }
-    iframe { border: none; margin-top: 15px; width: 200px; height: 50px; }
+
+    header {
+      background: linear-gradient(90deg, #0d3b66, #1e7f7f);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 45px;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      border-left: 5px solid #1e7f7f;
+      padding-left: 10px;
+      color: #0d3b66;
+      margin-top: 40px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1e7f7f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-link {
+      display: inline-block;
+      background: #1e7f7f;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 8px 5px;
+      font-weight: bold;
+    }
+
+    .pdf-link:hover {
+      background: #145656;
+    }
+
+    iframe {
+      width: 100%;
+      height: 160px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 15px;
+      font-size: 14px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <img class="logo" src="https://gateway.pinata.cloud/ipfs/QmaEE6jZ8E8cCQ73yA7cdSyCzAjMHEdy5RgXpgmKQn2kMp" alt="JUSDC Logo">
 
-  <h1>JUSDC Token</h1>
-  <p><strong>Symbol:</strong> JUSDC</p>
-  <p><strong>Name:</strong> JUSDC</p>
+  <header>
+    <div style="display:flex;align-items:center;">
+      <img src="https://jusdc.io/logos/cashmatrix.png" alt="CashMatrix Logo">
+      <h1 style="margin-left:15px;">JUSDC Documentation</h1>
+    </div>
+    <div>
+      <a href="https://jusdc.io" style="color:#fff;font-weight:bold;">Visit Official Site</a>
+    </div>
+  </header>
 
-  <div class="section">
-    <a class="pdf-link" href="/jusdcAttestation.pdf" target="_blank">📄 View Attestation PDF</a>
-    <br>
-    <a class="pdf-link" href="/whitepaper.pdf" download>📘 Download Whitepaper (v1.0)</a>
-  </div>
+  <main>
+    <section>
+      <h2>📄 Official Documents</h2>
+      <p>All official attestations, audits, and transparency documents related to the JUSDC stablecoin are available below.</p>
+      <p>
+        <a class="pdf-link" href="attestations/jusdcAttestation.pdf" target="_blank">View Attestation Report</a>
+        <a class="pdf-link" href="Transparency.md" target="_blank">View Transparency Report</a>
+        <a class="pdf-link" href="audits/placeholder.md" target="_blank">View Audit Report</a>
+      </p>
+    </section>
 
-  <div class="section">
-    <p><strong>Documentation:</strong> <a href="https://jusdc-official.github.io/jusdc-docs">View Tokenomics & Transparency</a></p>
-    <p>📊 <a href="https://coinranking.com/coin/LRTy40dlE+jusdc-jusdc" target="_blank">View on CoinRanking</a></p>
-    <p>📈 <a href="https://www.coingecko.com/en/coins/jusdc" target="_blank">View on CoinGecko</a></p>
-  </div>
+    <section>
+      <h2>💰 Live Price Feed</h2>
+      <p>The current JUSDC market price and live tracking are displayed below.</p>
+      <iframe src="https://jusdc-price.vercel.app" title="JUSDC Live Price"></iframe>
+    </section>
 
-  <div class="section">
-    <h2>Tokenomics</h2>
-    <ul class="tokenomics">
-      <li><strong>Liquidity (50%):</strong> DEX pools (e.g., Uniswap) for trading stability.</li>
-      <li><strong>Treasury/Reserves (20%):</strong> USD-backed reserves in regulated institutions.</li>
-      <li><strong>Ecosystem Development (15%):</strong> Multichain scaling, developer grants.</li>
-      <li><strong>Partnerships/Listings (10%):</strong> Exchange listings and strategic partnerships.</li>
-      <li><strong>Community Rewards (5%):</strong> Incentives for holders and community.</li>
-    </ul>
-    <p><strong>Total Supply:</strong> 37.975B JUSDC (1:1 USD-backed, 7,830%+ over-collateralized)</p>
-  </div>
+    <section>
+      <h2>🧾 Token Overview</h2>
+      <ul>
+        <li><strong>Token Name:</strong> JUSDC</li>
+        <li><strong>Symbol:</strong> JUSDC</li>
+        <li><strong>Network:</strong> Ethereum</li>
+        <li><strong>Contract Address:</strong> <a href="https://etherscan.io/token/0x3a4184028de3f2B2fB63d596ec9101328aC7A736" target="_blank">0x3a4184028de3f2B2fB63d596ec9101328aC7A736</a></li>
+        <li><strong>Reserve Wallet:</strong> <a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d" target="_blank">0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d</a></li>
+        <li><strong>Total Supply:</strong> 37,975,000 JUSDC</li>
+        <li><strong>Backing Type:</strong> 1:1 USD-backed</li>
+      </ul>
+    </section>
 
-<div class="section">
-  <p>
-    <a href="https://etherscan.io/address/0x3a4184028de3f2b2fb63d596ec9101328ac7a736">Verify Contract</a> | 
-    <a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d#tokentxns">Verify Reserves</a>
-  </p>
-  <h2>Live JUSDC Price</h2>
-  <iframe src="https://jusdc-price.vercel.app" title="JUSDC Live Price" 
-          style="width: 400px; height: 150px; border: none; border-radius: 10px;">
-  </iframe>
-</div>
+    <section>
+      <h2>🔍 Verification & References</h2>
+      <ul>
+        <li><a href="https://etherscan.io/token/0x3a4184028de3f2B2fB63d596ec9101328aC7A736" target="_blank">Etherscan Contract</a></li>
+        <li><a href="https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736" target="_blank">Cyberscope Audit</a></li>
+        <li><a href="https://coinranking.com/coin/LRTy40dlE+jusdc-jusdc" target="_blank">CoinRanking Listing</a></li>
+        <li><a href="https://www.coingecko.com/en/coins/jusdc" target="_blank">CoinGecko Listing</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 CashMatrix Digital Asset FZE — JUSDC Stablecoin Documentation.  
+    All rights reserved.
+  </footer>
+
 </body>
 </html>
