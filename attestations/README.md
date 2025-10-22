@@ -1,56 +1,68 @@
-# JUSDC Attestation & Token Listing Report
+# ![JUSDC Logo](https://jusdc.io/logos/cashmatrix.png) JUSDC Attestation Report
 
-This repository contains the official attestation and token listing report for **JUSDC**, issued by **CashMatrix Digital Asset FZE**.
+[![Verified On-Chain](https://img.shields.io/badge/Verified-On%20Chain-2E8B57?style=flat-square)](./jusdcAttestation.pdf)
+[![Download PDF](https://img.shields.io/badge/Download-PDF-blue?style=flat-square)](./jusdcAttestation.pdf)
 
-The PDF report, `jusdcAttestation.pdf`, provides a detailed overview of the JUSDC stablecoin, including contract information, token details, and audit verification.
-
----
-
-## 📄 PDF Report
-
-- **File Name:** `jusdcAttestation.pdf`  
-- **Generated On:** Auto-filled with current date  
-- **Purpose:** Official attestation for listing, transparency, and verification  
-- **Contents Include:**
-  1. **Company Information**
-     - Entity Name: CashMatrix Digital Asset FZE
-     - Project Name: JUSDC
-     - Official Website: [https://jusdc.io](https://jusdc.io)
-     - Network: Ethereum
-  2. **Token Details**
-     - Contract Address: `0x3a4184028de3f2B2fB63d596ec9101328aC7A736`
-     - Reserve Wallet: `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`
-     - Total Supply: 37,975,000 JUSDC
-     - Backing: 1:1 USD
-     - Audit Report: [Cyberscope Audit](https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736)
-  3. **Attestation Statement**
-     - Confirms that all JUSDC tokens are fully collateralized by USD assets
-     - Verified smart contract on Ethereum
-  4. **Verification Links**
-     - Website: [https://jusdc.io](https://jusdc.io)
-     - Etherscan: [View Token](https://etherscan.io/token/0x3a4184028de3f2B2fB63d596ec9101328aC7A736)
-     - Audit Report: [Cyberscope](https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736)
+This repository contains the official **JUSDC Attestation & Token Listing Report** issued by **CashMatrix Digital Asset FZE**.  
+The document provides transparency on the token's issuance, backing, and audit information.
 
 ---
 
-## ⚡ How to Use
+## 📄 Attestation PDF
 
-1. Open the PDF file `jusdcAttestation.pdf`.
-2. Review the token and company information for verification purposes.
-3. Use the verification links to check on-chain and audit data.
-4. Print or share the PDF for official listing or transparency reporting.
+You can **download** the official attestation report here:
 
----
+[Download JUSDC Attestation PDF](./jusdcAttestation.pdf)
 
-## 🛡️ Disclaimer
+Or **preview it directly** on GitHub:
 
-This attestation is issued solely by **CashMatrix Digital Asset FZE** and represents the official status of JUSDC at the time of generation. All balances and reserves are subject to verification through the provided smart contract and audit report.
+<embed src="./jusdcAttestation.pdf" type="application/pdf" width="100%" height="600px" />
 
 ---
 
-## 📎 Contact
+## 🏢 Company Information
 
-For further inquiries or verification:
+- **Entity Name:** CashMatrix Digital Asset FZE  
+- **Project Name:** JUSDC  
+- **Official Website:** [https://jusdc.io](https://jusdc.io)  
+- **Network:** Ethereum  
 
-- **Website:** [https://jusdc.io](https://jusdc.io)  
-- **Email:** support@jusdc.io
+---
+
+## 🔗 Token Details
+
+- **Contract Address:** [0x3a4184028de3f2B2fB63d596ec9101328aC7A736](https://etherscan.io/token/0x3a4184028de3f2B2fB63d596ec9101328aC7A736)  
+- **Reserve Wallet:** `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`  
+- **Total Supply:** 37,975,000 JUSDC  
+- **Backing Type:** 1:1 USD-backed  
+- **Audit Report:** [Cyberscope Audit](https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736)  
+
+---
+
+## 🛡️ Attestation Statement
+
+This document confirms that:
+
+- JUSDC is **fully backed 1:1 with USD reserves**.  
+- All tokens are issued under the verified smart contract address: `0x3a4184028de3f2B2fB63d596ec9101328aC7A736`.  
+- Reserves are transparently verifiable via the treasury wallet: `0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d`.  
+- Audit and smart contract verification have been completed by **Cyberscope**.
+
+---
+
+## 🌐 Verification Links
+
+- **Official Website:** [https://jusdc.io](https://jusdc.io)  
+- **Etherscan Token Page:** [View Token](https://etherscan.io/token/0x3a4184028de3f2B2fB63d596ec9101328aC7A736)  
+- **Audit Report:** [Cyberscope Audit](https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736)  
+
+---
+
+## ✅ Authorized By
+
+**CashMatrix Digital Asset FZE**  
+Issuer of JUSDC
+
+---
+
+> ⚠️ Note: This README references the official attestation PDF. Always verify links and contract addresses on [Etherscan](https://etherscan.io) before interacting with tokens.
