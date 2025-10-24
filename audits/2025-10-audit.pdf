@@ -1,36 +1,80 @@
-%PDF-1.4
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
 1 0 obj
-<</Type/Catalog/Pages 2 0 R>>
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R
+>>
 endobj
 2 0 obj
-<</Type/Pages/Kids[3 0 R]/Count 1>>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Contents 4 0 R>>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<</Length 550>>
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/Contents 9 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/PageMode /UseNone /Pages 8 0 R /Type /Catalog
+>>
+endobj
+7 0 obj
+<<
+/Author (anonymous) /CreationDate (D:20251024073111+04'00') /Creator (ReportLab PDF Library - www.reportlab.com) /Keywords () /ModDate (D:20251024073111+04'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (unspecified) /Title (untitled) /Trapped /False
+>>
+endobj
+8 0 obj
+<<
+/Count 1 /Kids [ 5 0 R ] /Type /Pages
+>>
+endobj
+9 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 681
+>>
 stream
-BT
-/F1 24 Tf 100 750 Td (JUSDC Smart Contract Audit - October 2025) Tj
-100 700 Td (Auditor: CertiK) Tj
-100 650 Td (Score: 94/100 - Low Risk) Tj
-100 600 Td (Contract: 0x3a4184028de3f2b2fb63d596ec9101328ac7a736) Tj
-100 550 Td (Reserve Wallet: 0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d) Tj
-100 500 Td (Total Supply: 37,975,000 JUSDC, 1:1 USD-backed) Tj
-100 450 Td (Key Findings: No critical vulnerabilities; minor issues noted) Tj
-100 400 Td (Full Report: https://jusdc-official.github.io/jusdc-docs/audits/2025-10-audit.pdf) Tj
-ET
-endstream
+Gat=(bAQ&g&A70Vp6ZQ!9N'B`2qNls:!s*OM?8JbHmrYOMZuc7nb8kZ[uh-si';l:/[7)nZ`D&q_M.lbfDp:N@6DS\$'Z04)GqpOiO6D_irfYTiZsTUO#Yu^,RC[i7sSEo_[Tk"qmjA-_/dGpLRDkhA\u?lQ.fS2q#ofGs1!V5mJ2Wq*60?-g`,D+"F^Vp\?\@28bVZYH"f"Sl`#l7^e@n7mnP5>74a.tJZYSTN"Cs+hRp]l]B;Nf,ad+T85E?O%OHMT+f/2a9o_2RU]^YT#W][fD_\"HVhjD3`>.@-ib9s-,#tAQ#fe3',%FcGSm?OqZuD_/Z7cQ6Z+=!8'34LpTf8dIN2MKpLfP5]K$0t,JoI0!8eFcQbc6?:o),MC4Y2S*2([ML[XS6MbsSQl].UDM)MMVp45[)34M_S88">EK-!+12(HZHpSU-(%DPV.kcQ.oD7>Ll&i4B"u[FZVdIqe4<=iPS)!m7&RJ"#aj4Qsded*B&A6"@QjV_aOMb^!FEmi]hd>AMf7Gh%8V1X13r87n\['GppA]tiZT+P[u\LC=Qu2:bQ2mJYU1`oEuJ8MMu#V1iN(oGH4a*bhrBO@H`7lW/NTG<9;fdA[)([^%qC.8G3+'hNAZBjes9qLNpmhr$s/NaV5'3TX]Kq_kO2Big[N>^H^fIq<:0>l4UgWENs~>endstream
 endobj
 xref
-0 5
-0000000000 65535 f
-0000000010 00000 n
-0000000053 00000 n
-0000000102 00000 n
-0000000190 00000 n
-trailer <</Size 5/Root 1 0 R>>
+0 10
+0000000000 65535 f 
+0000000073 00000 n 
+0000000124 00000 n 
+0000000231 00000 n 
+0000000343 00000 n 
+0000000458 00000 n 
+0000000661 00000 n 
+0000000729 00000 n 
+0000001025 00000 n 
+0000001084 00000 n 
+trailer
+<<
+/ID 
+[<f1fd2875f89ed2209c9df2bfe5373d18><f1fd2875f89ed2209c9df2bfe5373d18>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 7 0 R
+/Root 6 0 R
+/Size 10
+>>
 startxref
-400
+1855
 %%EOF
