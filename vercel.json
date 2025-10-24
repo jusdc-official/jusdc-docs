@@ -1,14 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/whitepaper.pdf", "destination": "/public/whitepaper.pdf" }
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" }
   ],
-  "headers": [
-    {
-      "source": "/public/whitepaper.pdf",
-      "headers": [
-        { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
-    }
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
