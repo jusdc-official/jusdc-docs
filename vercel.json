@@ -1,10 +1,6 @@
 {
-  "version": 2,
-  "public": true,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/attestations/:path*", "destination": "/attestations/:path*" },
+    { "source": "/audits/:path*", "destination": "/audits/:path*" }
   ]
 }
