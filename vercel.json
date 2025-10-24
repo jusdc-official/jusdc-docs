@@ -1,6 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/attestations/:path*", "destination": "/attestations/:path*" },
-    { "source": "/audits/:path*", "destination": "/audits/:path*" }
-  ]
+  "version": 2,
+  "public": true
 }
