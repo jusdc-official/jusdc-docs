@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/attestations/:path*", "destination": "/attestations/:path*" },
-    { "source": "/audits/:path*", "destination": "/audits/:path*" }
-  ],
   "routes": [
-    { "src": "/", "dest": "/index.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/attestations/(.*)", "dest": "/attestations/$1" },
+    { "src": "/audits/(.*)", "dest": "/audits/$1" }
   ]
 }
