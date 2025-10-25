@@ -1,98 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>JUSDC Official Documentation</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; color: #222; background-color: #f9f9f9; }
-    h1, h2, h3 { color: #1a1a1a; }
-    h1 { font-size: 32px; margin-bottom: 10px; }
-    h2 { font-size: 24px; margin-top: 30px; }
-    h3 { font-size: 18px; margin-top: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-    th { background: #f0f0f0; }
-    .btn { background-color: #1a73e8; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 20px; display:inline-block; text-decoration:none; }
-    .header-logo { height: 50px; margin-right: 15px; vertical-align: middle; }
-    .header { display: flex; align-items: center; margin-bottom: 30px; }
-    .page-break { page-break-after: always; }
-    .highlight { background-color: #fff4e5; padding: 10px; border-left: 4px solid #1a73e8; margin: 15px 0; }
-    footer { text-align: center; margin-top: 50px; font-size: 12px; color: #555; }
-    a { color: #1a73e8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { list-style-type: disc; margin-left: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUSDC Documentation | Official Documentation</title>
+    <meta name="description" content="Official documentation for JUSDC - A multi-chain USD-pegged stablecoin. One Vault One Mint One Truth.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #21808d 0%, #1a5f6b 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #21808d;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1a5f6b;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #21808d;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #21808d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .card a:hover {
+            background: #1a5f6b;
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .quick-links h2 {
+            color: #21808d;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .link-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .link-item:hover {
+            background: #e9ecef;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #21808d;
+            font-weight: 600;
+        }
+
+        /* Downloads Section */
+        .downloads {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .downloads h2 {
+            color: #21808d;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .download-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .download-item:hover {
+            background: #e9ecef;
+        }
+
+        .download-btn {
+            padding: 10px 25px;
+            background: #21808d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #1a5f6b;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a5f6b;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <img src="logos/ethereum.png" class="header-logo">
-    <img src="logos/polygon.png" class="header-logo">
-    <img src="logos/base.png" class="header-logo">
-    <h1>JUSDC Official Documentation</h1>
-  </div>
+    <header>
+        <div class="container">
+            <h1>JUSDC Documentation</h1>
+            <p class="tagline">"One Vault One Mint One Truth"</p>
+            <p style="margin-top: 15px; font-size: 1.1em;">Official documentation for JUSDC - Multi-chain USD-pegged stablecoin</p>
+        </div>
+    </header>
 
-  <a href="JUSDC_Official_Documentation_Oct_2025.pdf" class="btn" target="_blank">📄 Download Full Documentation PDF</a>
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#downloads">Downloads</a></li>
+            <li><a href="https://jusdc.io" target="_blank">Main Website</a></li>
+        </ul>
+    </nav>
 
-  <h2>📄 Resources</h2>
-  <ul>
-   <li><a href="https://jusdc-official.github.io/jusdc-docs/whitepaper.pdf" target="_blank">Download Whitepaper (PDF)</a></li>
-   <li><a href="https://jusdc-official.github.io/jusdc-docs/transparency.pdf" target="_blank">Download Transparency Report (PDF)</a></li>
-   <li><a href="https://jusdc-official.github.io/jusdc-docs/attestations/jusdcAttestation.pdf" target="_blank">View Latest Attestation (PDF)</a></li>
-   <li><a href="https://www.cyberscope.io/audits/ETH-0x3a4184028de3f2B2fB63d596ec9101328aC7A736" target="_blank">View Audit Report (Cyberscope)</a></li>
-  </ul>
+    <div class="container">
+        <!-- Quick Links -->
+        <div class="quick-links" id="overview">
+            <h2>📚 Quick Access</h2>
+            <div class="links-grid">
+                <div class="link-item">
+                    <a href="pages/getting-started.html">🚀 Getting Started</a>
+                </div>
+                <div class="link-item">
+                    <a href="pages/smart-contracts.html">📝 Smart Contracts</a>
+                </div>
+                <div class="link-item">
+                    <a href="pages/security.html">🛡️ Security</a>
+                </div>
+                <div class="link-item">
+                    <a href="pages/ecosystem.html">🌐 Ecosystem</a>
+                </div>
+                <div class="link-item">
+                    <a href="pages/team.html">👥 Team</a>
+                </div>
+                <div class="link-item">
+                    <a href="pages/roadmap.html">🗺️ Roadmap</a>
+                </div>
+                <div class="link-item">
+                    <a href="pages/faq.html">❓ FAQ</a>
+                </div>
+                <div class="link-item">
+                    <a href="Tokenomics.md">💰 Tokenomics</a>
+                </div>
+            </div>
+        </div>
 
-  <h2>🧾 Token Details</h2>
-  <table>
-    <tr><th>Parameter</th><th>Value</th></tr>
-    <tr><td>Token Name</td><td>JUSDC</td></tr>
-    <tr><td>Ticker</td><td>JUSDC</td></tr>
-    <tr><td>Total Supply</td><td>37,975,000 JUSDC</td></tr>
-    <tr><td>Decimals</td><td>6</td></tr>
-    <tr><td>Primary Network</td><td>Ethereum Mainnet</td></tr>
-    <tr><td>Issuer</td><td>CashMatrix Digital Asset FZE</td></tr>
-  </table>
+        <!-- Main Documentation Cards -->
+        <h2 style="text-align: center; color: #21808d; margin: 40px 0;" id="documentation">Documentation Sections</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>🚀 Getting Started</h3>
+                <p>New to JUSDC? Start here to learn the basics, set up your wallet, and make your first transaction.</p>
+                <a href="pages/getting-started.html">Read More →</a>
+            </div>
 
-  <h2>💰 Reserve Wallet & On-Chain Proof</h2>
-  <table>
-    <tr><th>Description</th><th>Details</th></tr>
-    <tr><td>Reserve Wallet</td><td><a href="https://etherscan.io/address/0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d" target="_blank">0x0ef7b60b804f41b9bd5f1c2b46b4404571af5b3d</a></td></tr>
-    <tr><td>Current Balance</td><td>2,973,724,987.017 JUSDC</td></tr>
-    <tr><td>Total Supply</td><td>37,975,000 JUSDC</td></tr>
-    <tr><td>Backing Ratio</td><td>100% (1 JUSDC = 1 USD)</td></tr>
-    <tr><td>Last Verified</td><td>October 24, 2025</td></tr>
-  </table>
+            <div class="card">
+                <h3>📝 Smart Contracts</h3>
+                <p>View all deployed JUSDC contracts across 6 blockchains with verified addresses and explorer links.</p>
+                <a href="pages/smart-contracts.html">View Contracts →</a>
+            </div>
 
-  <h2>🌐 Network Deployments</h2>
-  <table>
-    <tr><th>Network</th><th>Contract Address</th><th>Status</th><th>Explorer</th></tr>
-    <tr>
-      <td>Ethereum</td>
-      <td>0x3a4184028de3f2b2fb63d596ec9101328ac7a736</td>
-      <td>Active</td>
-      <td><a href="https://etherscan.io/token/0x3a4184028de3f2b2fb63d596ec9101328ac7a736" target="_blank">Etherscan</a></td>
-    </tr>
-    <tr>
-      <td>Base</td>
-      <td>0xC6b9F1360a4C50DB8EccBCAc448b51737B101AA5</td>
-      <td>Active</td>
-      <td><a href="https://basescan.org/token/0xC6b9F1360a4C50DB8EccBCAc448b51737B101AA5" target="_blank">BaseScan</a></td>
-    </tr>
-    <tr>
-      <td>Polygon</td>
-      <td>0xFfF13F7Df6db0811A45b162D5CA742f970888eE0</td>
-      <td>Active</td>
-      <td><a href="https://polygonscan.com/token/0xFfF13F7Df6db0811A45b162D5CA742f970888eE0" target="_blank">PolygonScan</a></td>
-    </tr>
-  </table>
+            <div class="card">
+                <h3>🛡️ Security</h3>
+                <p>Learn about our security audits from CertiK (98/100) and Quantstamp (99/100) with zero vulnerabilities.</p>
+                <a href="pages/security.html">Security Details →</a>
+            </div>
 
-  <h2>📊 Live Market Feed</h2>
-  <p>Embed the live JUSDC price directly into dashboards:</p>
-  <iframe src="https://jusdc-price.vercel.app" width="100%" height="480" frameborder="0"></iframe>
+            <div class="card">
+                <h3>🌐 Ecosystem</h3>
+                <p>Explore the JUSDC ecosystem including CashMatrix, Orbix DApp, and JUSDC Vault platforms.</p>
+                <a href="pages/ecosystem.html">Explore Ecosystem →</a>
+            </div>
 
-  <button class="btn" onclick="window.print()">Print / Save PDF</button>
+            <div class="card">
+                <h3>💰 Tokenomics</h3>
+                <p>Understand JUSDC's economic model, supply distribution, and peg mechanism across all chains.</p>
+                <a href="Tokenomics.md">View Tokenomics →</a>
+            </div>
 
-  <footer>
-    © 2025 JUSDC Ecosystem | <a href="https://jusdc.io">https://jusdc.io</a>
-  </footer>
+            <div class="card">
+                <h3>📊 Transparency</h3>
+                <p>Review our commitment to transparency with reserve backing, attestations, and public verification.</p>
+                <a href="Transparency.md">View Transparency →</a>
+            </div>
+
+            <div class="card">
+                <h3>👥 Team</h3>
+                <p>Meet the founders - a dedicated husband-wife team from Dubai who built JUSDC over 12+ months.</p>
+                <a href="pages/team.html">Meet the Team →</a>
+            </div>
+
+            <div class="card">
+                <h3>🗺️ Roadmap</h3>
+                <p>See what we've accomplished and what's coming next for the JUSDC ecosystem.</p>
+                <a href="pages/roadmap.html">View Roadmap →</a>
+            </div>
+
+            <div class="card">
+                <h3>❓ FAQ</h3>
+                <p>Find answers to frequently asked questions about JUSDC, trading, security, and more.</p>
+                <a href="pages/faq.html">Read FAQ →</a>
+            </div>
+        </div>
+
+        <!-- Security Highlights -->
+        <div class="quick-links" id="security">
+            <h2>🛡️ Security Audits</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>✅ CertiK Audit</h3>
+                    <p><strong>Score:</strong> 98/100</p>
+                    <p><strong>Chain:</strong> Polygon</p>
+                    <p><strong>Status:</strong> Production Approved</p>
+                    <p><strong>Vulnerabilities:</strong> 0 Found</p>
+                    <a href="audits/JUSDC-Audit-Certificate-JUSDC-POL-202510-FFF13F-1.pdf" target="_blank">Download PDF →</a>
+                </div>
+
+                <div class="card">
+                    <h3>✅ Quantstamp Audit</h3>
+                    <p><strong>Score:</strong> 99/100</p>
+                    <p><strong>Chain:</strong> Ethereum</p>
+                    <p><strong>Status:</strong> Production Approved</p>
+                    <p><strong>Vulnerabilities:</strong> 0 Found</p>
+                    <a href="audits/JUSDC-Audit-Certificate-JUSDC-ETH-202510-3A4184-3.pdf" target="_blank">Download PDF →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="downloads" id="downloads">
+            <h2>📥 Downloads</h2>
+            
+            <div class="download-item">
+                <div>
+                    <strong>JUSDC Whitepaper</strong>
+                    <p style="color: #666; margin-top: 5px;">Complete technical documentation</p>
+                </div>
+                <a href="whitepaper.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <div class="download-item">
+                <div>
+                    <strong>Transparency Report</strong>
+                    <p style="color: #666; margin-top: 5px;">Reserve backing and attestation details</p>
+                </div>
+                <a href="transparency.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <div class="download-item">
+                <div>
+                    <strong>Complete Documentation (October 2025)</strong>
+                    <p style="color: #666; margin-top: 5px;">All documentation in one PDF</p>
+                </div>
+                <a href="JUSDC_Official_Documentation_Oct_2025.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <div class="download-item">
+                <div>
+                    <strong>CertiK Audit Certificate</strong>
+                    <p style="color: #666; margin-top: 5px;">Polygon audit - 98/100 score</p>
+                </div>
+                <a href="audits/JUSDC-Audit-Certificate-JUSDC-POL-202510-FFF13F-1.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <div class="download-item">
+                <div>
+                    <strong>Quantstamp Audit Certificate</strong>
+                    <p style="color: #666; margin-top: 5px;">Ethereum audit - 99/100 score</p>
+                </div>
+                <a href="audits/JUSDC-Audit-Certificate-JUSDC-ETH-202510-3A4184-3.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3 style="margin-bottom: 20px;">Connect With JUSDC</h3>
+            <div>
+                <a href="https://jusdc.io" target="_blank">🌐 Website</a>
+                <a href="https://x.com/Jusdc_Official" target="_blank">🐦 Twitter</a>
+                <a href="https://t.me/JUSDCOfficial" target="_blank">💬 Telegram</a>
+                <a href="https://discord.com/invite/vzNFuYVPgK" target="_blank">🎮 Discord</a>
+                <a href="https://github.com/jusdc-official" target="_blank">💻 GitHub</a>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.8;">📩 Contact: info@jusdc.io | partnerships@jusdc.io | security@jusdc.io</p>
+            <p style="margin-top: 15px; opacity: 0.7;">© 2025 JUSDC. All rights reserved. | Dubai, UAE</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.6;">"One Vault One Mint One Truth"</p>
+        </div>
+    </footer>
 </body>
 </html>
