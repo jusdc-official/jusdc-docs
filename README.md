@@ -21,27 +21,27 @@ Official documentation hub for **JUSDC (Justice USD Coin)** — A secure, multi-
 
 ## 📖 Documentation Sections
 
-| Section | Description |
-|---------|-------------|
-| [🚀 Getting Started](https://jusdc-official.github.io/jusdc-docs/pages/getting-started.html) | Set up wallets and make your first transaction |
-| [📝 Smart Contracts](https://jusdc-official.github.io/jusdc-docs/pages/smart-contracts.html) | Contract addresses across all chains |
-| [🛡️ Security & Audits](https://jusdc-official.github.io/jusdc-docs/pages/security.html) | CertiK and Quantstamp audit reports |
-| [💰 Tokenomics](https://jusdc-official.github.io/jusdc-docs/pages/tokenomics.html) | Economic model and distribution |
-| [📊 Transparency](https://jusdc-official.github.io/jusdc-docs/pages/Transparency.html) | Reserve verification and attestations |
-| [🌐 Ecosystem](https://jusdc-official.github.io/jusdc-docs/pages/ecosystem.html) | CashMatrix, Orbix, and JUSDC Vault |
-| [👥 Team](https://jusdc-official.github.io/jusdc-docs/pages/team.html) | Meet Ibrahim (Founder) & Ibtisam (Co-Founder) |
-| [🗺️ Roadmap](https://jusdc-official.github.io/jusdc-docs/pages/roadmap.html) | Development timeline 2024-2027 |
-| [❓ FAQ](https://jusdc-official.github.io/jusdc-docs/pages/faq.html) | Frequently asked questions |
+| Section | Link |
+|---------|------|
+| 🚀 **Getting Started** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/getting-started.html) |
+| 📝 **Smart Contracts** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/smart-contracts.html) |
+| 🛡️ **Security & Audits** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/security.html) |
+| 💰 **Tokenomics** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/tokenomics.html) |
+| 📊 **Transparency** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/Transparency.html) |
+| 🌐 **Ecosystem** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/ecosystem.html) |
+| 👥 **Team** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/team.html) |
+| 🗺️ **Roadmap** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/roadmap.html) |
+| ❓ **FAQ** | [View →](https://jusdc-official.github.io/jusdc-docs/pages/faq.html) |
 
 ---
 
 ## 📥 Download Resources
 
-- [📄 Whitepaper](whitepaper.pdf) *(Coming Soon)*
-- [🛡️ CertiK Audit Certificate](audits/JUSDC-Audit-Certificate-JUSDC-POL-202510-FFF13F-2.pdf)
-- [📊 Transparency Report](https://jusdc-official.github.io/jusdc-docs/pages/Transparency.html)
-- [🗺️ Roadmap PDF](https://jusdc-official.github.io/jusdc-docs/pages/roadmap.html)
-- [💰 Tokenomics Report](https://jusdc-official.github.io/jusdc-docs/pages/tokenomics.html)
+- [📄 **Whitepaper**](https://jusdc-official.github.io/jusdc-docs/whitepaper.pdf) — Complete technical documentation
+- [🛡️ **CertiK Audit**](audits/JUSDC-Audit-Certificate-JUSDC-POL-202510-FFF13F-2.pdf) — 98/100 score, zero vulnerabilities
+- [📊 **Transparency Report**](https://jusdc-official.github.io/jusdc-docs/pages/Transparency.html) — Reserve attestations
+- [🗺️ **Roadmap**](https://jusdc-official.github.io/jusdc-docs/pages/roadmap.html) — 2024-2027 timeline
+- [💰 **Tokenomics**](https://jusdc-official.github.io/jusdc-docs/pages/tokenomics.html) — Economic model
 
 ---
 
@@ -75,6 +75,7 @@ Despite having no technical background, they spent 12+ months learning blockchai
 ## 🏗️ Repository Structure
 jusdc-docs/
 ├── index.html # Homepage
+├── whitepaper.pdf # Technical whitepaper
 ├── pages/ # Documentation pages
 │ ├── getting-started.html
 │ ├── smart-contracts.html
@@ -104,6 +105,17 @@ JUSDC smart contracts have been audited by:
 **Zero critical, high, medium, or low severity issues found.**
 
 All contracts are production-approved and publicly verified on respective block explorers.
+
+[View Complete Security Documentation →](https://jusdc-official.github.io/jusdc-docs/pages/security.html)
+
+---
+
+## 🚀 Quick Start
+
+1. Visit our [Getting Started Guide](https://jusdc-official.github.io/jusdc-docs/pages/getting-started.html)
+2. Set up a compatible wallet (MetaMask, Coinbase Wallet, etc.)
+3. Add JUSDC token using contract addresses from [Smart Contracts](https://jusdc-official.github.io/jusdc-docs/pages/smart-contracts.html)
+4. Start using JUSDC for payments, trading, and DeFi
 
 ---
 
