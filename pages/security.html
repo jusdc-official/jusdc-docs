@@ -4,12 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUSDC Security & Audits</title>
-    <link rel="stylesheet" href="../style.css">
-    </head>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav a {
+            color: #1e88a8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        
+        .audit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .audit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.15);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .audit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #1e88a8, #34c759);
+        }
+        
+        .audit-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(30, 136, 168, 0.25);
+        }
+        
+        .audit-badge {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #34c759, #1e88a8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            margin: 0 auto 25px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(52, 199, 89, 0.3);
+        }
+        
+        .audit-company {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #1e88a8;
+            margin-bottom: 20px;
+        }
+        
+        .audit-score {
+            font-size: 4em;
+            font-weight: 900;
+            color: #34c759;
+            text-align: center;
+            margin: 25px 0;
+            text-shadow: 2px 2px 4px rgba(52, 199, 89, 0.2);
+        }
+        
+        .audit-status {
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+            background: #34c759;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 15px auto;
+            font-weight: 600;
+        }
+        
+        .audit-details {
+            margin: 30px 0;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 2px solid #dee2e6;
+            font-size: 1.05em;
+        }
+        
+        .detail-row:last-child { border-bottom: none; }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .detail-value {
+            font-weight: bold;
+            color: #1e88a8;
+        }
+        
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #1e88a8, #34c759);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-top: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(30, 136, 168, 0.3);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(30, 136, 168, 0.4);
+        }
+        
+        .security-features {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        
+        .security-features h2 {
+            color: #1e88a8;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 5px solid #1e88a8;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(30, 136, 168, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            color: #1e88a8;
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.3);
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a { color: white; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .audit-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
 <body>
     <div class="header">
         <h1>🛡️ Security & Audits</h1>
-        <p style="font-size: 1.2em; margin-top: 10px;">"One Vault One Mint One Truth"</p>
+        <p style="font-size: 1.2em; opacity: 0.95; font-style: italic; margin-top: 10px;">"One Vault One Mint One Truth"</p>
     </div>
 
     <div class="nav">
@@ -17,140 +260,161 @@
     </div>
 
     <div class="container">
-        <h2 style="text-align: center; color: #21808d; font-size: 2.5em; margin-bottom: 40px;">Audit Reports</h2>
-        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: #1e88a8; font-size: 2.5em; margin-bottom: 20px;">Industry-Leading Security Audits</h2>
+            <p style="font-size: 1.2em; color: #555; max-width: 700px; margin: 0 auto;">
+                JUSDC smart contracts have been rigorously audited by two of the blockchain industry's most trusted security firms.
+            </p>
+        </div>
+
         <div class="audit-grid">
             <!-- CertiK Audit -->
             <div class="audit-card">
                 <div class="audit-badge">✅</div>
-                <h3 style="text-align: center; color: #21808d; font-size: 1.8em; margin-bottom: 10px;">CertiK Audit</h3>
+                <div class="audit-company">CertiK</div>
+                <div style="text-align: center;">
+                    <span class="audit-status">Production Approved</span>
+                </div>
                 <div class="audit-score">98/100</div>
-                <p style="text-align: center; color: #4CAF50; font-weight: 600; margin-bottom: 20px;">Production Approved</p>
                 
                 <div class="audit-details">
                     <div class="detail-row">
-                        <span><strong>Chain:</strong></span>
-                        <span>Polygon</span>
+                        <span class="detail-label">Blockchain:</span>
+                        <span class="detail-value">Polygon</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Date:</strong></span>
-                        <span>October 7, 2025</span>
+                        <span class="detail-label">Audit Date:</span>
+                        <span class="detail-value">October 7, 2025</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Critical:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">Critical Issues:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>High:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">High Severity:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Medium:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">Medium Severity:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Low:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">Low Severity:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value" style="color: #34c759;">Production Approved</span>
                     </div>
                 </div>
                 
-                <a href="../audits/2025-10-audit.pdf" class="download-btn" download>Download Certificate →</a>
+                <a href="../audits/2025-10-audit.pdf" class="download-btn" download>📥 Download Certificate</a>
             </div>
 
             <!-- Quantstamp Audit -->
             <div class="audit-card">
                 <div class="audit-badge">✅</div>
-                <h3 style="text-align: center; color: #21808d; font-size: 1.8em; margin-bottom: 10px;">Quantstamp Audit</h3>
+                <div class="audit-company">Quantstamp</div>
+                <div style="text-align: center;">
+                    <span class="audit-status">Production Approved</span>
+                </div>
                 <div class="audit-score">99/100</div>
-                <p style="text-align: center; color: #4CAF50; font-weight: 600; margin-bottom: 20px;">Production Approved</p>
                 
                 <div class="audit-details">
                     <div class="detail-row">
-                        <span><strong>Chain:</strong></span>
-                        <span>Ethereum</span>
+                        <span class="detail-label">Blockchain:</span>
+                        <span class="detail-value">Ethereum</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Date:</strong></span>
-                        <span>October 10, 2025</span>
+                        <span class="detail-label">Audit Date:</span>
+                        <span class="detail-value">October 10, 2025</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Critical:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">Critical Issues:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>High:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">High Severity:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Medium:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">Medium Severity:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
                     </div>
                     <div class="detail-row">
-                        <span><strong>Low:</strong></span>
-                        <span style="color: #4CAF50;">0 Found ✓</span>
+                        <span class="detail-label">Low Severity:</span>
+                        <span class="detail-value" style="color: #34c759;">0 Found ✓</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value" style="color: #34c759;">Production Approved</span>
                     </div>
                 </div>
                 
-                <a href="../audits/2025-10-audit.pdf" class="download-btn" download>Download Certificate →</a>
+                <a href="../audits/2025-10-audit.pdf" class="download-btn" download>📥 Download Certificate</a>
             </div>
         </div>
 
         <!-- Security Features -->
         <div class="security-features">
-            <h2 style="color: #21808d; margin-bottom: 30px;">🔐 Security Measures</h2>
+            <h2>🔐 Security Measures</h2>
             
-            <div class="feature-grid">
+            <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🔑</div>
-                    <h4 style="color: #21808d; margin-bottom: 10px;">Multi-Signature</h4>
-                    <p style="color: #666;">Reserve wallets require multiple authorized signatures for transactions.</p>
+                    <span class="feature-icon">🔑</span>
+                    <h3>Multi-Signature Wallets</h3>
+                    <p style="color: #666;">Reserve wallets require multiple authorized signatures for any transaction, preventing unauthorized access.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">⏸️</div>
-                    <h4 style="color: #21808d; margin-bottom: 10px;">Emergency Pause</h4>
-                    <p style="color: #666;">Contracts can be paused immediately if vulnerabilities are detected.</p>
+                    <span class="feature-icon">⏸️</span>
+                    <h3>Emergency Pause</h3>
+                    <p style="color: #666;">Smart contracts can be immediately paused if vulnerabilities are detected, protecting user funds.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">👁️</div>
-                    <h4 style="color: #21808d; margin-bottom: 10px;">24/7 Monitoring</h4>
-                    <p style="color: #666;">Continuous surveillance of all contract activity and transactions.</p>
+                    <span class="feature-icon">👁️</span>
+                    <h3>24/7 Monitoring</h3>
+                    <p style="color: #666;">Continuous surveillance of all contract activity and on-chain transactions for suspicious behavior.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🐛</div>
-                    <h4 style="color: #21808d; margin-bottom: 10px;">Bug Bounty</h4>
-                    <p style="color: #666;">Rewards for responsible disclosure of security vulnerabilities.</p>
+                    <span class="feature-icon">🐛</span>
+                    <h3>Bug Bounty Program</h3>
+                    <p style="color: #666;">Rewards for responsible disclosure of security vulnerabilities from the community.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h4 style="color: #21808d; margin-bottom: 10px;">Upgrade Safety</h4>
-                    <p style="color: #666;">Smart contract upgrades include timelock and community governance.</p>
+                    <span class="feature-icon">🔄</span>
+                    <h3>Secure Upgrades</h3>
+                    <p style="color: #666;">Smart contract upgrades include timelock mechanisms and community governance oversight.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h4 style="color: #21808d; margin-bottom: 10px;">Regular Reviews</h4>
-                    <p style="color: #666;">Quarterly security assessments and continuous improvement.</p>
+                    <span class="feature-icon">📊</span>
+                    <h3>Regular Reviews</h3>
+                    <p style="color: #666;">Quarterly security assessments and continuous code improvements to maintain highest standards.</p>
                 </div>
             </div>
         </div>
 
         <!-- Report Vulnerability -->
-        <div class="security-features" style="text-align: center;">
-            <h2 style="color: #21808d; margin-bottom: 20px;">📧 Report a Vulnerability</h2>
-            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
-                Found a security issue? We take security seriously and appreciate responsible disclosure.
+        <div class="contact-section">
+            <h2>📧 Report a Security Issue</h2>
+            <p style="font-size: 1.2em; margin: 20px 0; opacity: 0.95;">
+                Found a potential vulnerability? We take security seriously and appreciate responsible disclosure.
             </p>
-            <p style="font-size: 1.2em;"><strong>Email:</strong> security@jusdc.io</p>
-            <p style="margin-top: 15px; color: #666;">Rewards available based on severity</p>
+            <p style="font-size: 1.4em; font-weight: bold; margin: 20px 0;">
+                📩 security@jusdc.io
+            </p>
+            <p style="margin-top: 25px; opacity: 0.9;">
+                Rewards available based on severity and impact. All reports handled confidentially.
+            </p>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 JUSDC | <a href="../index.html" style="color: white;">Documentation Home</a></p>
+        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io" target="_blank">Main Website</a></p>
     </footer>
 </body>
 </html>
