@@ -4,12 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUSDC Smart Contracts Registry</title>
-    <link rel="stylesheet" href="../style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-style: italic;
+        }
+        
+        .nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav a {
+            color: #1e88a8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover { color: #16697d; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .intro {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.1);
+            text-align: center;
+        }
+        
+        .chain-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .chain-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.2);
+        }
+        
+        .chain-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1e88a8;
+        }
+        
+        .chain-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(30, 136, 168, 0.2));
+        }
+        
+        .chain-header h2 {
+            color: #1e88a8;
+            font-size: 2em;
+            flex: 1;
+        }
+        
+        .contract-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #1e88a8;
+            transition: all 0.3s;
+        }
+        
+        .contract-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(30, 136, 168, 0.2);
+        }
+        
+        .contract-name {
+            color: #1e88a8;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contract-address {
+            font-family: 'Courier New', Monaco, monospace;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            word-break: break-all;
+            font-size: 0.95em;
+            margin: 10px 0;
+        }
+        
+        .view-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #1e88a8, #34c759);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(30, 136, 168, 0.3);
+        }
+        
+        .info-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #e3f2fd;
+            color: #1e88a8;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 5px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .chain-header { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <h1>📝 Smart Contracts Registry</h1>
-        <p style="font-size: 1.2em; margin-top: 10px;">"One Vault One Mint One Truth"</p>
+        <p class="tagline">"One Vault One Mint One Truth"</p>
     </div>
 
     <div class="nav">
@@ -17,94 +197,159 @@
     </div>
 
     <div class="container">
-        <!-- Ethereum Section -->
+        <div class="intro">
+            <h2 style="color: #1e88a8; margin-bottom: 20px;">Official JUSDC Contract Addresses</h2>
+            <p style="font-size: 1.15em; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                JUSDC is deployed across <strong>6 major blockchains</strong>. Always verify contract addresses before interacting. All contracts are audited and verified on respective block explorers.
+            </p>
+        </div>
+
+        <!-- Ethereum Network -->
         <div class="chain-section">
             <div class="chain-header">
                 <img src="../logos/ethereum.png" alt="Ethereum" class="chain-logo">
-                <h2>Ethereum Contracts</h2>
+                <h2>Ethereum Mainnet</h2>
+                <span class="info-badge">Audited ✓</span>
             </div>
             
             <div class="contract-card">
                 <div class="contract-name">JUSDC Latest</div>
                 <div class="contract-address">0x3a4184028de3f2B2fB63d596ec9101328aC7A736</div>
+                <div>
+                    <span class="info-badge">Symbol: JUSDC</span>
+                    <span class="info-badge">Decimals: 6</span>
+                    <span class="info-badge">Supply: $37.98B</span>
+                </div>
                 <a href="https://etherscan.io/address/0x3a4184028de3f2B2fB63d596ec9101328aC7A736" target="_blank" class="view-btn">View on Etherscan →</a>
             </div>
 
             <div class="contract-card">
                 <div class="contract-name">JUSDC Primary</div>
                 <div class="contract-address">0x3ef4C53F23da91920651931a4BF98812444F4171</div>
+                <div>
+                    <span class="info-badge">Symbol: JUSDC</span>
+                    <span class="info-badge">Decimals: 6</span>
+                </div>
                 <a href="https://etherscan.io/address/0x3ef4C53F23da91920651931a4BF98812444F4171" target="_blank" class="view-btn">View on Etherscan →</a>
             </div>
 
             <div class="contract-card">
                 <div class="contract-name">JUSDC Secondary</div>
                 <div class="contract-address">0x6F649388259cA5a0b4F0533c37BB35139Ba75AE0</div>
+                <div>
+                    <span class="info-badge">Symbol: JUSDC</span>
+                    <span class="info-badge">Decimals: 6</span>
+                </div>
                 <a href="https://etherscan.io/address/0x6F649388259cA5a0b4F0533c37BB35139Ba75AE0" target="_blank" class="view-btn">View on Etherscan →</a>
             </div>
         </div>
 
-        <!-- Polygon Section -->
+        <!-- Polygon Network -->
         <div class="chain-section">
             <div class="chain-header">
                 <img src="../logos/polygon.png" alt="Polygon" class="chain-logo">
-                <h2>Polygon Contracts</h2>
+                <h2>Polygon Network</h2>
+                <span class="info-badge">Audited ✓</span>
             </div>
             
             <div class="contract-card">
                 <div class="contract-name">JUSDC</div>
                 <div class="contract-address">0xFfF13F7Df6db0811A45b162D5CA742f970888eE0</div>
+                <div>
+                    <span class="info-badge">Symbol: JUSDC</span>
+                    <span class="info-badge">Decimals: 6</span>
+                    <span class="info-badge">Supply: $1.00B</span>
+                </div>
                 <a href="https://polygonscan.com/address/0xFfF13F7Df6db0811A45b162D5CA742f970888eE0" target="_blank" class="view-btn">View on Polygonscan →</a>
             </div>
 
             <div class="contract-card">
-                <div class="contract-name">wUSDC</div>
+                <div class="contract-name">wUSDC (Wrapped)</div>
                 <div class="contract-address">0x5a5E9C6363a8B74C8216F542FB1FDFd0163A8825</div>
+                <div>
+                    <span class="info-badge">Symbol: wUSDC</span>
+                    <span class="info-badge">Decimals: 6</span>
+                </div>
                 <a href="https://polygonscan.com/address/0x5a5E9C6363a8B74C8216F542FB1FDFd0163A8825" target="_blank" class="view-btn">View on Polygonscan →</a>
             </div>
         </div>
 
-        <!-- Base Section -->
+        <!-- Base Network -->
         <div class="chain-section">
             <div class="chain-header">
                 <img src="../logos/base.png" alt="Base" class="chain-logo">
-                <h2>Base Contracts</h2>
+                <h2>Base Network</h2>
+                <span class="info-badge">Coinbase L2</span>
             </div>
             
             <div class="contract-card">
                 <div class="contract-name">JUSDC on Base</div>
-                <div class="contract-address">Coming Soon - Deployment In Progress</div>
-                <p style="margin-top: 10px; color: #666;">Contract addresses will be published upon deployment completion.</p>
+                <div class="contract-address">Deployment In Progress</div>
+                <div>
+                    <span class="info-badge">Coming Soon</span>
+                    <span class="info-badge">Supply: $1.00B</span>
+                </div>
+                <p style="color: #7f8c8d; margin-top: 15px;">Contract addresses will be published upon deployment completion.</p>
             </div>
         </div>
 
-        <!-- Contract Functions -->
+        <!-- BSC Network -->
         <div class="chain-section">
-            <h2 style="color: #21808d; margin-bottom: 20px;">⚙️ Core Contract Functions</h2>
+            <div class="chain-header">
+                <div style="width: 60px; height: 60px; background: #F3BA2F; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2em;">BSC</div>
+                <h2>Binance Smart Chain</h2>
+                <span class="info-badge">Active</span>
+            </div>
             
             <div class="contract-card">
-                <div class="contract-name">mint()</div>
-                <p style="color: #666;">Creates new JUSDC tokens when USD is deposited. Only callable by authorized minters. Each token is backed 1:1 by USD reserves.</p>
+                <div class="contract-name">JUSDC on BSC</div>
+                <p style="color: #7f8c8d;">Contract deployment completed. Address publication pending verification.</p>
             </div>
+        </div>
 
-            <div class="contract-card">
-                <div class="contract-name">burn()</div>
-                <p style="color: #666;">Removes JUSDC from circulation during redemption. Triggers USD release from reserves back to user.</p>
+        <!-- Arbitrum Network -->
+        <div class="chain-section">
+            <div class="chain-header">
+                <div style="width: 60px; height: 60px; background: #28A0F0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2em;">ARB</div>
+                <h2>Arbitrum Network</h2>
+                <span class="info-badge">Layer 2</span>
             </div>
+            
+            <div class="contract-card">
+                <div class="contract-name">JUSDC on Arbitrum</div>
+                <p style="color: #7f8c8d;">Low-fee Ethereum Layer 2 deployment. Address coming soon.</p>
+            </div>
+        </div>
 
-            <div class="contract-card">
-                <div class="contract-name">transfer()</div>
-                <p style="color: #666;">Standard ERC-20 transfer function. Moves JUSDC between wallets with minimal gas fees.</p>
+        <!-- Orbix Network -->
+        <div class="chain-section">
+            <div class="chain-header">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e88a8, #16697d); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 0.9em;">ORBIX</div>
+                <h2>Orbix Network</h2>
+                <span class="info-badge">Ecosystem</span>
             </div>
+            
+            <div class="contract-card">
+                <div class="contract-name">JUSDC on Orbix</div>
+                <p style="color: #7f8c8d;">Native JUSDC ecosystem chain. Optimized for low fees and high throughput.</p>
+            </div>
+        </div>
 
-            <div class="contract-card">
-                <div class="contract-name">pause()</div>
-                <p style="color: #666;">Emergency security function. Temporarily halts all transfers in case of detected vulnerabilities.</p>
-            </div>
+        <!-- Important Notes -->
+        <div class="intro" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border-left: 5px solid #ffc107;">
+            <h2 style="color: #856404; margin-bottom: 20px;">⚠️ Security Reminder</h2>
+            <ul style="text-align: left; max-width: 700px; margin: 0 auto; list-style: none; padding: 0;">
+                <li style="padding: 10px 0; color: #856404;">✓ Always verify contract addresses on official block explorers</li>
+                <li style="padding: 10px 0; color: #856404;">✓ Never trust addresses from unofficial sources</li>
+                <li style="padding: 10px 0; color: #856404;">✓ Check the token symbol and decimals before transacting</li>
+                <li style="padding: 10px 0; color: #856404;">✓ All JUSDC contracts use 6 decimals</li>
+                <li style="padding: 10px 0; color: #856404;">✓ Report suspicious contracts to security@jusdc.io</li>
+            </ul>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 JUSDC | <a href="../index.html" style="color: white;">Documentation Home</a></p>
+        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io" target="_blank">Main Website</a></p>
     </footer>
 </body>
 </html>
