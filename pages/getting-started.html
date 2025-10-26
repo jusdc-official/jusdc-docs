@@ -4,100 +4,338 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Getting Started with JUSDC</title>
-    <link rel="stylesheet" href="../style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-style: italic;
+        }
+        
+        .nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav a {
+            color: #1e88a8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover { color: #16697d; }
+        
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.15);
+        }
+        
+        .section h2 {
+            color: #1e88a8;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1e88a8;
+        }
+        
+        .section h3 {
+            color: #16697d;
+            font-size: 1.5em;
+            margin: 25px 0 15px;
+        }
+        
+        .step-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #1e88a8;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(30, 136, 168, 0.15);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e88a8, #34c759);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        
+        .contract-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 0.95em;
+        }
+        
+        .wallet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .wallet-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .wallet-card:hover {
+            border-color: #1e88a8;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(30, 136, 168, 0.15);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #1e88a8, #34c759);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 136, 168, 0.3);
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            color: #555;
+        }
+        
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .section { padding: 25px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Getting Started with JUSDC</h1>
-        <p>Your guide to using JUSDC stablecoin</p>
-    </header>
+    <div class="header">
+        <h1>🚀 Getting Started with JUSDC</h1>
+        <p class="tagline">"One Vault One Mint One Truth"</p>
+    </div>
 
-    <nav>
+    <div class="nav">
         <a href="../index.html">← Back to Documentation</a>
-    </nav>
+    </div>
 
     <div class="container">
-        <div class="content">
+        <div class="section">
             <h2>What is JUSDC?</h2>
-            <p>JUSDC (Justice USD Coin) is a USD-pegged stablecoin where 1 JUSDC = $1 USD. It's deployed across 6 major blockchains and designed for fast, low-cost, secure payments.</p>
-            
-            <blockquote>"One Vault One Mint One Truth"</blockquote>
+            <p style="font-size: 1.15em; line-height: 1.8;">
+                JUSDC (Justice USD Coin) is a <strong>USD-pegged stablecoin</strong> where 1 JUSDC = $1 USD. It's deployed across 6 major blockchains and designed for fast, low-cost, and secure cross-chain payments with full reserve backing.
+            </p>
+        </div>
 
+        <div class="section">
             <h2>Quick Start Guide</h2>
             
-            <h3>Step 1: Set Up Your Wallet</h3>
-            <p>JUSDC works with any ERC-20 compatible wallet. We recommend:</p>
-            <ul>
-                <li><strong>MetaMask</strong> - Browser extension and mobile app</li>
-                <li><strong>Ledger</strong> - Hardware wallet for maximum security</li>
-                <li><strong>Coinbase Wallet</strong> - User-friendly mobile wallet</li>
-                <li><strong>Rabby</strong> - Advanced DeFi wallet</li>
-            </ul>
-
-            <h3>Step 2: Add JUSDC to Your Wallet</h3>
-            <p>Add JUSDC token using these contract addresses:</p>
-            
-            <div class="info-box">
-                <h4>📝 Ethereum</h4>
-                <code>0x3a4184028de3f2B2fB63d596ec9101328aC7A736</code>
-                <p><small>Symbol: JUSDC | Decimals: 6</small></p>
+            <div class="step-card">
+                <h3><span class="step-number">1</span>Set Up Your Wallet</h3>
+                <p>JUSDC works with any ERC-20 compatible wallet. Choose from our recommended options:</p>
+                
+                <div class="wallet-grid">
+                    <div class="wallet-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">🦊</div>
+                        <strong>MetaMask</strong>
+                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">Browser & Mobile</p>
+                    </div>
+                    <div class="wallet-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">🔐</div>
+                        <strong>Ledger</strong>
+                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">Hardware Security</p>
+                    </div>
+                    <div class="wallet-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">💼</div>
+                        <strong>Coinbase Wallet</strong>
+                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">User Friendly</p>
+                    </div>
+                    <div class="wallet-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">🐰</div>
+                        <strong>Rabby</strong>
+                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">DeFi Focused</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="info-box">
-                <h4>📝 Polygon</h4>
-                <code>0xFfF13F7Df6db0811A45b162D5CA742f970888eE0</code>
-                <p><small>Symbol: JUSDC | Decimals: 6</small></p>
+            <div class="step-card">
+                <h3><span class="step-number">2</span>Add JUSDC Token</h3>
+                <p>Add JUSDC to your wallet using these contract addresses:</p>
+                
+                <h4 style="color: #1e88a8; margin: 20px 0 10px;">Ethereum Network</h4>
+                <div class="contract-box">
+                    0x3a4184028de3f2B2fB63d596ec9101328aC7A736
+                </div>
+                <p style="color: #7f8c8d;"><strong>Symbol:</strong> JUSDC | <strong>Decimals:</strong> 6</p>
+                
+                <h4 style="color: #1e88a8; margin: 20px 0 10px;">Polygon Network</h4>
+                <div class="contract-box">
+                    0xFfF13F7Df6db0811A45b162D5CA742f970888eE0
+                </div>
+                <p style="color: #7f8c8d;"><strong>Symbol:</strong> JUSDC | <strong>Decimals:</strong> 6</p>
             </div>
 
-            <h3>Step 3: Get JUSDC</h3>
-            <p>You can acquire JUSDC through:</p>
-            <ul>
-                <li><strong>DEXs:</strong> Uniswap, PancakeSwap, QuickSwap</li>
-                <li><strong>CEXs:</strong> (Coming soon - check roadmap)</li>
-                <li><strong>CashMatrix App:</strong> Digital banking integration</li>
-            </ul>
+            <div class="step-card">
+                <h3><span class="step-number">3</span>Get JUSDC</h3>
+                <p>Acquire JUSDC through multiple channels:</p>
+                <ul>
+                    <li><strong>Decentralized Exchanges:</strong> Uniswap, PancakeSwap, QuickSwap</li>
+                    <li><strong>CashMatrix App:</strong> Digital banking integration (coming soon)</li>
+                    <li><strong>Direct Mint:</strong> Contact our team for large amounts</li>
+                </ul>
+            </div>
 
-            <h3>Step 4: Use JUSDC</h3>
-            <ul>
-                <li>💳 Make payments through CashMatrix</li>
-                <li>💱 Trade on DEXs and CEXs</li>
-                <li>🏦 Use in DeFi protocols</li>
-                <li>💰 Store as stable value</li>
-            </ul>
+            <div class="step-card">
+                <h3><span class="step-number">4</span>Use JUSDC</h3>
+                <ul>
+                    <li>💳 Make instant payments with low fees</li>
+                    <li>💱 Trade on DEXs and CEXs</li>
+                    <li>🏦 Participate in DeFi protocols</li>
+                    <li>💰 Store stable USD value without a bank</li>
+                    <li>🌍 Send money globally in seconds</li>
+                </ul>
+            </div>
+        </div>
 
+        <div class="section">
             <h2>Supported Blockchains</h2>
-            <p>JUSDC is natively deployed on:</p>
+            <p>JUSDC is natively deployed on 6 major blockchains:</p>
             <ul>
-                <li>✅ Ethereum</li>
-                <li>✅ Polygon</li>
-                <li>✅ Base</li>
-                <li>✅ BSC (Binance Smart Chain)</li>
-                <li>✅ Arbitrum</li>
-                <li>✅ Orbix</li>
+                <li>Ethereum - Main network</li>
+                <li>Polygon - Low fee transactions</li>
+                <li>Base - Coinbase Layer 2</li>
+                <li>BSC - Binance Smart Chain</li>
+                <li>Arbitrum - Ethereum L2</li>
+                <li>Orbix - Ecosystem chain</li>
             </ul>
+        </div>
 
-            <h2>Adding JUSDC to MetaMask (Step-by-Step)</h2>
-            <ol>
-                <li>Open MetaMask and select the network (Ethereum, Polygon, etc.)</li>
-                <li>Click "Import Tokens" at the bottom</li>
-                <li>Paste the JUSDC contract address for that network</li>
-                <li>Token symbol (JUSDC) and decimals (6) should auto-fill</li>
-                <li>Click "Add Custom Token"</li>
-                <li>Confirm and you're done!</li>
-            </ol>
+        <div class="section">
+            <h2>Adding JUSDC to MetaMask</h2>
+            <p style="margin-bottom: 20px;">Follow these simple steps:</p>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                <ol style="list-style: decimal; padding-left: 20px;">
+                    <li style="margin: 15px 0; padding-left: 10px;">Open MetaMask and select your network (Ethereum, Polygon, etc.)</li>
+                    <li style="margin: 15px 0; padding-left: 10px;">Click "Import Tokens" at the bottom</li>
+                    <li style="margin: 15px 0; padding-left: 10px;">Paste the JUSDC contract address for that network</li>
+                    <li style="margin: 15px 0; padding-left: 10px;">Token symbol (JUSDC) and decimals (6) should auto-fill</li>
+                    <li style="margin: 15px 0; padding-left: 10px;">Click "Add Custom Token"</li>
+                    <li style="margin: 15px 0; padding-left: 10px;">Confirm and you're done! ✓</li>
+                </ol>
+            </div>
+        </div>
 
-            <h2>Need Help?</h2>
-            <ul>
-                <li>📧 Email: support@jusdc.io</li>
-                <li>💬 Telegram: <a href="https://t.me/JUSDCOfficial" target="_blank">@JUSDCOfficial</a></li>
-                <li>🎮 Discord: <a href="https://discord.com/invite/vzNFuYVPgK" target="_blank">Join Our Community</a></li>
-                <li>❓ <a href="faq.html">Check our FAQ</a></li>
-            </ul>
+        <div class="section" style="text-align: center; background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%); color: white;">
+            <h2 style="color: white; border-bottom-color: white;">Need Help?</h2>
+            <p style="font-size: 1.1em; margin: 20px 0;">Our community is here to support you!</p>
+            <div>
+                <a href="mailto:support@jusdc.io" class="btn" style="background: white; color: #1e88a8;">📧 Email Support</a>
+                <a href="https://t.me/JUSDCOfficial" class="btn" style="background: white; color: #1e88a8;" target="_blank">💬 Telegram</a>
+                <a href="https://discord.com/invite/vzNFuYVPgK" class="btn" style="background: white; color: #1e88a8;" target="_blank">🎮 Discord</a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io">Main Website</a></p>
+        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io" target="_blank">Main Website</a></p>
     </footer>
 </body>
 </html>
