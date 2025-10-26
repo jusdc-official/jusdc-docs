@@ -3,31 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUSDC Frequently Asked Questions</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>JUSDC FAQ - Frequently Asked Questions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.3);
+        }
+        
+        .header h1 { font-size: 3em; font-weight: 700; margin-bottom: 15px; }
+        
+        .nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav a { color: #1e88a8; text-decoration: none; font-weight: 600; font-size: 1.1em; }
+        
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        
+        .category {
+            margin: 50px 0;
+        }
+        
+        .category-title {
+            color: #1e88a8;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1e88a8;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(30, 136, 168, 0.1);
+            transition: all 0.3s;
+            border-left: 5px solid #1e88a8;
+        }
+        
+        .faq-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 35px rgba(30, 136, 168, 0.15);
+        }
+        
+        .question {
+            color: #1e88a8;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .answer {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .answer strong { color: #1e88a8; }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.3);
+        }
+        
+        .contact-box h2 { color: white; font-size: 2.5em; margin-bottom: 20px; }
+        
+        footer {
+            background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a { color: white; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .faq-item { padding: 25px 20px; }
+        }
+    </style>
 </head>
 <body>
-    <header><h1>FAQs</h1></header>
-    <nav><a href="../index.html">← Back to Documentation</a></nav>
-    <main>
-        <section>
-            <h2>General</h2>
-            <p><strong>What is JUSDC?</strong> <br> A USD-pegged stablecoin deployed on multiple blockchains.</p>
-            <p><strong>Who built JUSDC?</strong> <br> Two dedicated non-technical founders (Dubai).</p>
-            <p><strong>Is JUSDC audited?</strong> <br> Yes—CertiK (98/100) and Quantstamp (99/100) audits.</p>
-            <h2>Technical</h2>
-            <p><strong>Which chains are supported?</strong> <br> Ethereum, Polygon, Base, BSC, Arbitrum, Orbix.</p>
-            <p><strong>Are contracts verified?</strong> <br> Yes, all on respective explorers.</p>
-            <h2>Trading</h2>
-            <p><strong>Where can I buy JUSDC?</strong> <br> See the roadmap for DEX/CEX plans.</p>
-            <p><strong>Wallets supported?</strong> <br> MetaMask, Ledger, Coinbase, Rabby.</p>
-            <h2>Security</h2>
-            <p><strong>Reserve backing?</strong> <br> Audited supply and reserves—see transparency page.</p>
-            <p><strong>How are issues handled?</strong> <br> Emergency pause and security reporting (security@jusdc.io).</p>
-        </section>
-    </main>
+    <div class="header">
+        <h1>❓ Frequently Asked Questions</h1>
+        <p style="font-size: 1.2em; opacity: 0.95; font-style: italic; margin-top: 10px;">"One Vault One Mint One Truth"</p>
+    </div>
+
+    <div class="nav">
+        <a href="../index.html">← Back to Documentation</a>
+    </div>
+
+    <div class="container">
+        <!-- General Questions -->
+        <div class="category">
+            <h2 class="category-title">💡 General</h2>
+            
+            <div class="faq-item">
+                <div class="question">Q: What is JUSDC?</div>
+                <div class="answer">
+                    JUSDC (Justice USD Coin) is a <strong>USD-pegged stablecoin</strong> where 1 JUSDC = $1 USD. It's deployed across 6 major blockchains (Ethereum, Polygon, Base, BSC, Arbitrum, and Orbix) and designed for fast, low-cost, secure payments with full reserve backing.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: Who created JUSDC?</div>
+                <div class="answer">
+                    JUSDC was created by <strong>Ibrahim (Founder)</strong> and <strong>Ibtisam (Co-Founder)</strong>, based in Dubai, UAE. Despite having no technical background, they spent 12+ months learning and building the entire ecosystem from scratch.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: Is JUSDC safe?</div>
+                <div class="answer">
+                    Yes! JUSDC has been audited by <strong>CertiK (98/100 score)</strong> and <strong>Quantstamp (99/100 score)</strong> with <strong>zero vulnerabilities found</strong>. All smart contracts are production-approved and publicly verified.
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Questions -->
+        <div class="category">
+            <h2 class="category-title">🔧 Technical</h2>
+            
+            <div class="faq-item">
+                <div class="question">Q: Which blockchains support JUSDC?</div>
+                <div class="answer">
+                    JUSDC is available on: <strong>Ethereum, Polygon, Base, BSC (Binance Smart Chain), Arbitrum, and Orbix</strong>. You can bridge JUSDC between these chains seamlessly.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: What are the contract addresses?</div>
+                <div class="answer">
+                    All official contract addresses are listed on our <strong><a href="smart-contracts.html" style="color: #1e88a8; text-decoration: underline;">Smart Contracts page</a></strong>. Always verify addresses on official block explorers before transacting.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: How many decimals does JUSDC use?</div>
+                <div class="answer">
+                    JUSDC uses <strong>6 decimals</strong>, consistent with USDC and USDT. This means 1 JUSDC = 1,000,000 in the smallest unit.
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading & Usage -->
+        <div class="category">
+            <h2 class="category-title">💱 Trading & Usage</h2>
+            
+            <div class="faq-item">
+                <div class="question">Q: Where can I buy JUSDC?</div>
+                <div class="answer">
+                    Currently, JUSDC is preparing for DEX launches on <strong>Uniswap, PancakeSwap, and QuickSwap</strong> (Q1 2026). CEX listings on MEXC, Gate.io, and others are planned for Q2 2026.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: How do I add JUSDC to my wallet?</div>
+                <div class="answer">
+                    Check our <strong><a href="getting-started.html" style="color: #1e88a8; text-decoration: underline;">Getting Started guide</a></strong> for step-by-step instructions. You'll need the contract address for your blockchain and can add it via MetaMask, Coinbase Wallet, or any ERC-20 compatible wallet.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: What are the fees?</div>
+                <div class="answer">
+                    <strong>No JUSDC-specific fees!</strong> You only pay standard blockchain gas fees. On Polygon and Base, these are typically under $0.01. On Ethereum, they vary based on network congestion.
+                </div>
+            </div>
+        </div>
+
+        <!-- Reserve & Backing -->
+        <div class="category">
+            <h2 class="category-title">💰 Reserve & Backing</h2>
+            
+            <div class="faq-item">
+                <div class="question">Q: Is JUSDC fully backed?</div>
+                <div class="answer">
+                    Yes! JUSDC maintains <strong>$35 billion in USD reserves</strong> backing the $39.98 billion supply, representing an <strong>87.5% reserve ratio</strong>. Full transparency is provided through the JUSDC Vault system.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: Can I redeem JUSDC for USD?</div>
+                <div class="answer">
+                    Yes! JUSDC can be redeemed 1:1 for USD through authorized channels. Redemption processes are currently being finalized for the public launch.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: How can I verify reserves?</div>
+                <div class="answer">
+                    Reserve attestations are published monthly by independent auditors. Real-time verification is available through the <strong>JUSDC Vault dashboard</strong>. All mint/burn transactions are publicly visible on-chain.
+                </div>
+            </div>
+        </div>
+
+        <!-- Ecosystem -->
+        <div class="category">
+            <h2 class="category-title">🌐 Ecosystem</h2>
+            
+            <div class="faq-item">
+                <div class="question">Q: What is CashMatrix?</div>
+                <div class="answer">
+                    <strong>CashMatrix</strong> is JUSDC's digital banking application launching in Q2 2026. It will offer virtual cards, mobile banking, merchant tools, and seamless fiat on/off ramps integrated with JUSDC.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: What is Orbix?</div>
+                <div class="answer">
+                    <strong>Orbix</strong> is JUSDC's native Layer 2 blockchain designed for ultra-low fees (under $0.01), instant finality, and seamless cross-chain bridging. Testnet launches Q4 2025, mainnet Q2 2026.
+                </div>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div class="category">
+            <h2 class="category-title">🆘 Support</h2>
+            
+            <div class="faq-item">
+                <div class="question">Q: How do I get help?</div>
+                <div class="answer">
+                    Join our community on <strong><a href="https://t.me/JUSDCOfficial" target="_blank" style="color: #1e88a8; text-decoration: underline;">Telegram</a></strong>, <strong><a href="https://discord.com/invite/vzNFuYVPgK" target="_blank" style="color: #1e88a8; text-decoration: underline;">Discord</a></strong>, or email us at <strong>support@jusdc.io</strong>.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Q: How do I report a security issue?</div>
+                <div class="answer">
+                    Email <strong>security@jusdc.io</strong> immediately. We take security seriously and offer rewards for responsible disclosure.
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+            <h2>Still Have Questions?</h2>
+            <p style="font-size: 1.2em; margin: 20px 0; opacity: 0.95;">
+                We're here to help! Reach out to our team.
+            </p>
+            <p style="font-size: 1.3em; font-weight: bold; margin-top: 25px;">
+                📧 support@jusdc.io | 💬 <a href="https://t.me/JUSDCOfficial" style="color: white; text-decoration: underline;" target="_blank">Telegram</a> | 🎮 <a href="https://discord.com/invite/vzNFuYVPgK" style="color: white; text-decoration: underline;" target="_blank">Discord</a>
+            </p>
+        </div>
+    </div>
+
     <footer>
-        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a></p>
+        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io" target="_blank">Main Website</a></p>
+        <p style="margin-top: 15px;">Ibrahim (Founder) & Ibtisam (Co-Founder) | Dubai, UAE</p>
     </footer>
 </body>
 </html>
