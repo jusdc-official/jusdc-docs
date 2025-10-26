@@ -3,85 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUSDC Roadmap | Timeline & Milestones</title>
-    <link rel="stylesheet" href="../style.css">
-    </head>
+    <title>JUSDC Roadmap 2025-2027</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.3);
+        }
+        
+        .header h1 { font-size: 3em; font-weight: 700; margin-bottom: 15px; }
+        
+        .nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav a { color: #1e88a8; text-decoration: none; font-weight: 600; font-size: 1.1em; }
+        
+        .download-btn {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #1e88a8, #34c759);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover { transform: translateY(-2px); }
+        
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #1e88a8 0%, #34c759 100%);
+            transform: translateX(-50%);
+        }
+        
+        .milestone {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .milestone:nth-child(odd) .milestone-card {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .milestone:nth-child(even) .milestone-card {
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        .milestone-card {
+            width: 45%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.15);
+            transition: all 0.4s;
+            position: relative;
+        }
+        
+        .milestone-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1e88a8, #34c759);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .milestone-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 70px rgba(30, 136, 168, 0.25);
+        }
+        
+        .milestone-icon {
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e88a8, #34c759);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            box-shadow: 0 6px 20px rgba(30, 136, 168, 0.4);
+            z-index: 10;
+        }
+        
+        .milestone-status {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .status-completed {
+            background: #34c759;
+            color: white;
+        }
+        
+        .status-progress {
+            background: #FFC107;
+            color: #333;
+        }
+        
+        .status-planned {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .milestone-card h3 {
+            color: #1e88a8;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .milestone-date {
+            color: #7f8c8d;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: #555;
+            font-size: 1.05em;
+        }
+        
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a { color: white; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .timeline::before { left: 30px; }
+            .milestone-card { width: calc(100% - 80px); margin-left: 80px !important; }
+            .milestone-icon { left: 30px; }
+            .nav { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
 <body>
     <div class="header">
         <h1>🗺️ JUSDC Roadmap</h1>
-        <p class="tagline">"One Vault One Mint One Truth"</p>
-        <p style="margin-top: 15px; opacity: 0.9;">Our Journey from Vision to Global Adoption</p>
+        <p style="font-size: 1.2em; opacity: 0.95; font-style: italic; margin-top: 10px;">"One Vault One Mint One Truth"</p>
+        <p style="margin-top: 15px; opacity: 0.9;">Development Timeline 2024-2027</p>
     </div>
 
     <div class="nav">
         <a href="../index.html">← Back to Documentation</a>
+        <a href="#" onclick="window.print(); return false;" class="download-btn">📥 Download PDF</a>
     </div>
 
     <div class="container">
-        <h2 class="section-title">✅ Completed Milestones</h2>
-
         <div class="timeline">
+            <!-- Milestone 1: COMPLETED -->
             <div class="milestone">
-                <div class="milestone-icon">🏗️</div>
+                <div class="milestone-icon">✅</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-completed">COMPLETED</span>
                     <h3>Foundation & Infrastructure</h3>
-                    <p style="color: #666; margin-bottom: 15px;">2024 - Early 2025</p>
+                    <div class="milestone-date">2024 - Early 2025</div>
                     <ul>
                         <li>Smart contracts developed and deployed</li>
-                        <li>Multi-chain architecture (6 blockchains)</li>
+                        <li>Multi-chain architecture established (6 blockchains)</li>
                         <li>Professional website launched (jusdc.io)</li>
-                        <li>GitHub repositories established</li>
+                        <li>GitHub repositories and documentation</li>
                         <li>Brand identity and logo design</li>
+                        <li>Initial team formation</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Milestone 2: COMPLETED -->
             <div class="milestone">
                 <div class="milestone-icon">🛡️</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-completed">COMPLETED</span>
                     <h3>Security Audits</h3>
-                    <p style="color: #666; margin-bottom: 15px;">October 2025</p>
+                    <div class="milestone-date">October 2025</div>
                     <ul>
                         <li>CertiK audit completed (98/100 score)</li>
                         <li>Quantstamp audit completed (99/100 score)</li>
-                        <li>Zero vulnerabilities found</li>
+                        <li>Zero critical vulnerabilities found</li>
                         <li>Production approval received</li>
-                        <li>Bug bounty program framework</li>
+                        <li>Bug bounty program framework established</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="milestone">
-                <div class="milestone-icon">🏦</div>
-                <div class="milestone-card">
-                    <span class="milestone-status status-completed">COMPLETED</span>
-                    <h3>Ecosystem Development</h3>
-                    <p style="color: #666; margin-bottom: 15px;">2025</p>
-                    <ul>
-                        <li>CashMatrix banking app integration</li>
-                        <li>Orbix DApp development</li>
-                        <li>JUSDC Vault platform created</li>
-                        <li>Reserve management structure</li>
-                        <li>Legal and compliance documentation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">🔄 Current Status (Q4 2025)</h2>
-
-        <div class="timeline">
+            <!-- Milestone 3: IN PROGRESS -->
             <div class="milestone">
                 <div class="milestone-icon">🚀</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-progress">IN PROGRESS</span>
                     <h3>Launch Preparation</h3>
-                    <p style="color: #666; margin-bottom: 15px;">October - November 2025</p>
+                    <div class="milestone-date">Q4 2025 (October - December)</div>
                     <ul>
-                        <li>Creating DEX liquidity pools</li>
-                        <li>Applying to CoinGecko & CoinMarketCap</li>
+                        <li>DEX liquidity pool creation</li>
+                        <li>CoinGecko listing application</li>
+                        <li>CoinMarketCap listing application</li>
                         <li>Community building campaigns</li>
                         <li>Partnership discussions with exchanges</li>
                         <li>Documentation finalization</li>
@@ -89,149 +271,96 @@
                 </div>
             </div>
 
-            <div class="milestone">
-                <div class="milestone-icon">👥</div>
-                <div class="milestone-card">
-                    <span class="milestone-status status-progress">IN PROGRESS</span>
-                    <h3>Team & Community Growth</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Ongoing</p>
-                    <ul>
-                        <li>Building social media presence</li>
-                        <li>Engaging with crypto communities</li>
-                        <li>Creating educational content</li>
-                        <li>Hosting AMAs and events</li>
-                        <li>Expanding core team</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">📅 Q1 2026</h2>
-
-        <div class="timeline">
+            <!-- Milestone 4: PLANNED -->
             <div class="milestone">
                 <div class="milestone-icon">💱</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-planned">PLANNED</span>
-                    <h3>DEX Listings & Trading</h3>
-                    <p style="color: #666; margin-bottom: 15px;">January - March 2026</p>
+                    <h3>DEX Launch & Initial Trading</h3>
+                    <div class="milestone-date">Q1 2026 (January - March)</div>
                     <ul>
                         <li>Uniswap V3 pools (Ethereum, Polygon, Base)</li>
                         <li>PancakeSwap listing (BSC)</li>
                         <li>QuickSwap integration (Polygon)</li>
-                        <li>SushiSwap deployment</li>
                         <li>Initial liquidity provision ($100K+)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="milestone">
-                <div class="milestone-icon">📊</div>
-                <div class="milestone-card">
-                    <span class="milestone-status status-planned">PLANNED</span>
-                    <h3>Tracking & Visibility</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Q1 2026</p>
-                    <ul>
                         <li>CoinGecko listing approval</li>
                         <li>CoinMarketCap listing</li>
-                        <li>DexScreener tracking</li>
-                        <li>DEXTools integration</li>
-                        <li>Price aggregators</li>
+                        <li>DexScreener tracking integration</li>
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <h2 class="section-title">📅 Q2 2026</h2>
-
-        <div class="timeline">
+            <!-- Milestone 5: PLANNED -->
             <div class="milestone">
-                <div class="milestone-icon">🏢</div>
+                <div class="milestone-icon">🏦</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-planned">PLANNED</span>
                     <h3>First CEX Listings</h3>
-                    <p style="color: #666; margin-bottom: 15px;">April - June 2026</p>
+                    <div class="milestone-date">Q2 2026 (April - June)</div>
                     <ul>
                         <li>MEXC Global listing</li>
                         <li>ProBit exchange (community vote)</li>
                         <li>Gate.io application</li>
-                        <li>Reserve attestation from third-party</li>
+                        <li>Third-party reserve attestation</li>
                         <li>Enhanced liquidity ($500K+)</li>
+                        <li>CashMatrix app beta launch</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Milestone 6: PLANNED -->
             <div class="milestone">
-                <div class="milestone-icon">💰</div>
+                <div class="milestone-icon">📱</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-planned">PLANNED</span>
-                    <h3>CashMatrix Public Beta</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Q2 2026</p>
-                    <ul>
-                        <li>Full CashMatrix app launch</li>
-                        <li>JUSDC payment integration</li>
-                        <li>Merchant onboarding</li>
-                        <li>User growth campaigns</li>
-                        <li>Real-world use case demonstration</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">📅 Q3-Q4 2026 & Beyond</h2>
-
-        <div class="timeline">
-            <div class="milestone">
-                <div class="milestone-icon">🚀</div>
-                <div class="milestone-card">
-                    <span class="milestone-status status-planned">PLANNED</span>
-                    <h3>Tier 2 Exchange Expansion</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Q3 2026</p>
+                    <h3>Ecosystem Expansion</h3>
+                    <div class="milestone-date">Q3 2026 (July - September)</div>
                     <ul>
                         <li>KuCoin listing application</li>
                         <li>Bybit spot trading</li>
-                        <li>HTX (Huobi) consideration</li>
-                        <li>Bitget exchange</li>
-                        <li>Institutional partnerships</li>
+                        <li>CashMatrix public launch</li>
+                        <li>Merchant onboarding program</li>
+                        <li>Orbix Chain testnet launch</li>
+                        <li>Enhanced DeFi integrations</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Milestone 7: PLANNED -->
             <div class="milestone">
                 <div class="milestone-icon">🌍</div>
                 <div class="milestone-card">
                     <span class="milestone-status status-planned">PLANNED</span>
                     <h3>Global Expansion</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Q4 2026 - 2027</p>
+                    <div class="milestone-date">Q4 2026 - 2027</div>
                     <ul>
-                        <li>Binance listing preparation</li>
-                        <li>Coinbase application</li>
-                        <li>Kraken consideration</li>
+                        <li>Tier 1 exchange applications (Binance, Coinbase, Kraken)</li>
+                        <li>Orbix Chain mainnet launch</li>
                         <li>Additional blockchain integrations</li>
-                        <li>Enterprise and institutional adoption</li>
+                        <li>Enterprise partnerships</li>
+                        <li>Institutional adoption programs</li>
+                        <li>Global marketing campaigns</li>
+                        <li>Regulatory compliance in major markets</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Download Section -->
-        <div class="download-section">
-            <h2 style="color: #21808d; margin-bottom: 20px;">📥 Download Complete Roadmap</h2>
-            <p style="color: #666; margin-bottom: 30px; font-size: 1.1em;">Get the full JUSDC roadmap as a professional PDF report</p>
-            <a href="#" class="download-btn" onclick="window.print(); return false;">Print/Save as PDF →</a>
+        <!-- Summary Section -->
+        <div style="background: white; border-radius: 20px; padding: 50px 40px; margin: 60px 0; box-shadow: 0 15px 50px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="color: #1e88a8; font-size: 2.5em; margin-bottom: 25px;">Our Commitment</h2>
+            <p style="font-size: 1.2em; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                This roadmap represents our vision for JUSDC's growth. Built by a dedicated husband-wife team from Dubai over 12+ months, we're committed to transparency, security, and creating real value for our community.
+            </p>
+            <p style="font-size: 1.1em; color: #7f8c8d; margin-top: 25px;">
+                Timeline subject to market conditions and regulatory requirements. Updates posted regularly on our social channels.
+            </p>
         </div>
     </div>
 
     <footer>
-        <h3 style="margin-bottom: 20px;">Connect With JUSDC</h3>
-        <div>
-            <a href="https://jusdc.io" target="_blank">🌐 Website</a>
-            <a href="https://x.com/Jusdc_Official" target="_blank">🐦 Twitter</a>
-            <a href="https://t.me/JUSDCOfficial" target="_blank">💬 Telegram</a>
-            <a href="https://discord.com/invite/vzNFuYVPgK" target="_blank">🎮 Discord</a>
-        </div>
-        <p style="margin-top: 30px; opacity: 0.8;">© 2025 JUSDC | Dubai, UAE</p>
-        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">"One Vault One Mint One Truth"</p>
+        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io" target="_blank">Main Website</a></p>
+        <p style="margin-top: 15px;">Follow our progress: <a href="https://t.me/JUSDCOfficial" target="_blank">Telegram</a> | <a href="https://x.com/Jusdc_Official" target="_blank">Twitter</a></p>
     </footer>
 </body>
 </html>
