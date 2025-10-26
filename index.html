@@ -12,10 +12,8 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
             color: #2c3e50;
             line-height: 1.6;
-            min-height: 100vh;
         }
         
-        /* Animated Header */
         .header {
             background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
             color: white;
@@ -42,25 +40,17 @@
             50% { transform: scale(1.15) rotate(180deg); }
         }
         
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .header-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         
-        .logo-container {
-            margin-bottom: 30px;
-        }
-        
-        .main-logo {
-            width: 120px;
-            height: 120px;
-            background: white;
+        .header-logo {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            padding: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-            margin: 0 auto;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            margin: 0 auto 30px;
+            object-fit: contain;
         }
         
         .header h1 {
@@ -68,7 +58,6 @@
             font-weight: 700;
             margin-bottom: 20px;
             text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
-            letter-spacing: -1px;
         }
         
         .tagline {
@@ -86,7 +75,6 @@
             margin: 0 auto;
         }
         
-        /* Quick Stats Bar */
         .stats-bar {
             background: white;
             padding: 30px 20px;
@@ -103,10 +91,6 @@
             text-align: center;
         }
         
-        .stat-item {
-            padding: 10px;
-        }
-        
         .stat-value {
             font-size: 2em;
             font-weight: bold;
@@ -121,7 +105,6 @@
             font-weight: 600;
         }
         
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 60px auto;
@@ -149,7 +132,6 @@
             border-radius: 2px;
         }
         
-        /* Card Grid */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -163,21 +145,7 @@
             padding: 40px 30px;
             box-shadow: 0 10px 40px rgba(30, 136, 168, 0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
             border-top: 4px solid #1e88a8;
-        }
-        
-        .doc-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 0%, rgba(30, 136, 168, 0.03) 100%);
-            opacity: 0;
-            transition: opacity 0.4s;
         }
         
         .doc-card:hover {
@@ -185,16 +153,11 @@
             box-shadow: 0 20px 60px rgba(30, 136, 168, 0.2);
         }
         
-        .doc-card:hover::before {
-            opacity: 1;
-        }
-        
         .card-icon {
             font-size: 3.5em;
             margin-bottom: 20px;
             display: block;
             text-align: center;
-            filter: drop-shadow(0 4px 8px rgba(30, 136, 168, 0.2));
         }
         
         .doc-card h3 {
@@ -208,7 +171,6 @@
             color: #7f8c8d;
             margin-bottom: 25px;
             line-height: 1.7;
-            font-size: 1.05em;
         }
         
         .card-link {
@@ -228,7 +190,6 @@
             box-shadow: 0 6px 20px rgba(30, 136, 168, 0.4);
         }
         
-        /* Security Highlight Section */
         .security-highlight {
             background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
             color: white;
@@ -266,7 +227,6 @@
             margin: 15px 0;
         }
         
-        /* Downloads Section */
         .downloads-section {
             background: white;
             padding: 50px 40px;
@@ -304,10 +264,8 @@
         
         .download-btn:hover {
             background: #16697d;
-            transform: translateY(-2px);
         }
         
-        /* Footer */
         footer {
             background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
             color: white;
@@ -332,31 +290,21 @@
         .footer-links a {
             color: white;
             text-decoration: none;
-            font-size: 1.1em;
             transition: opacity 0.3s;
         }
         
-        .footer-links a:hover {
-            opacity: 0.7;
-        }
+        .footer-links a:hover { opacity: 0.7; }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .header h1 { font-size: 2.2em; }
-            .section-title { font-size: 2em; }
             .card-grid { grid-template-columns: 1fr; }
-            .stats-container { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="header-content">
-            <div class="logo-container">
-                <div class="main-logo">
-                    <span style="font-size: 3em;">📘</span>
-                </div>
-            </div>
+            <img src="logos/logo.jpg" alt="JUSDC Logo" class="header-logo">
             <h1>JUSDC Documentation</h1>
             <p class="tagline">"One Vault One Mint One Truth"</p>
             <p class="subtitle">Complete technical documentation and resources for the JUSDC multi-chain stablecoin ecosystem</p>
@@ -379,7 +327,7 @@
             </div>
             <div class="stat-item">
                 <span class="stat-value">98.5/100</span>
-                <span class="stat-label">Audit Score Avg</span>
+                <span class="stat-label">Audit Score</span>
             </div>
         </div>
     </div>
@@ -412,93 +360,90 @@
             <div class="doc-card">
                 <span class="card-icon">🌐</span>
                 <h3>Ecosystem</h3>
-                <p>Explore CashMatrix, Orbix DApp, and JUSDC Vault platforms in our ecosystem.</p>
-                <a href="pages/ecosystem.html" class="card-link">Explore Ecosystem →</a>
+                <p>Explore CashMatrix, Orbix DApp, and JUSDC Vault platforms.</p>
+                <a href="pages/ecosystem.html" class="card-link">Explore →</a>
             </div>
 
             <div class="doc-card">
                 <span class="card-icon">💰</span>
                 <h3>Tokenomics</h3>
-                <p>Understand JUSDC's economic model, supply distribution, and peg mechanism.</p>
+                <p>Understand JUSDC's economic model and supply distribution.</p>
                 <a href="pages/tokenomics.html" class="card-link">View Tokenomics →</a>
             </div>
 
             <div class="doc-card">
                 <span class="card-icon">📊</span>
                 <h3>Transparency</h3>
-                <p>Review our commitment to transparency with reserve backing and public verification.</p>
+                <p>Review reserve backing and public verification.</p>
                 <a href="Transparency.md" class="card-link">View Transparency →</a>
             </div>
 
             <div class="doc-card">
                 <span class="card-icon">👥</span>
                 <h3>Team</h3>
-                <p>Meet the dedicated husband-wife team from Dubai who built JUSDC over 12+ months.</p>
-                <a href="pages/team.html" class="card-link">Meet the Team →</a>
+                <p>Meet the dedicated founders from Dubai.</p>
+                <a href="pages/team.html" class="card-link">Meet Team →</a>
             </div>
 
             <div class="doc-card">
                 <span class="card-icon">🗺️</span>
                 <h3>Roadmap</h3>
-                <p>See what we've accomplished and what's coming next for JUSDC ecosystem.</p>
+                <p>See our milestones and future plans.</p>
                 <a href="pages/roadmap.html" class="card-link">View Roadmap →</a>
             </div>
 
             <div class="doc-card">
                 <span class="card-icon">❓</span>
                 <h3>FAQ</h3>
-                <p>Find answers to frequently asked questions about JUSDC, trading, and security.</p>
+                <p>Find answers to common questions.</p>
                 <a href="pages/faq.html" class="card-link">Read FAQ →</a>
             </div>
         </div>
 
         <div class="security-highlight">
             <h2>🛡️ Security First</h2>
-            <p style="font-size: 1.2em; margin-bottom: 40px; opacity: 0.95;">JUSDC is audited by two of the industry's most trusted security firms</p>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">Audited by industry leaders</p>
             
             <div class="audit-badges">
                 <div class="audit-badge">
-                    <div style="font-size: 2em; margin-bottom: 10px;">✅</div>
-                    <h3 style="margin-bottom: 10px;">CertiK</h3>
+                    <div style="font-size: 2em;">✅</div>
+                    <h3>CertiK</h3>
                     <div class="audit-score">98/100</div>
-                    <p style="color: #7f8c8d; margin-top: 10px;">Polygon Chain<br>0 Vulnerabilities</p>
+                    <p style="color: #7f8c8d;">Polygon | 0 Vulnerabilities</p>
                 </div>
                 
                 <div class="audit-badge">
-                    <div style="font-size: 2em; margin-bottom: 10px;">✅</div>
-                    <h3 style="margin-bottom: 10px;">Quantstamp</h3>
+                    <div style="font-size: 2em;">✅</div>
+                    <h3>Quantstamp</h3>
                     <div class="audit-score">99/100</div>
-                    <p style="color: #7f8c8d; margin-top: 10px;">Ethereum Chain<br>0 Vulnerabilities</p>
+                    <p style="color: #7f8c8d;">Ethereum | 0 Vulnerabilities</p>
                 </div>
             </div>
         </div>
 
         <div class="downloads-section">
-            <h2 style="text-align: center; color: #1e88a8; margin-bottom: 30px;">📥 Downloads & Resources</h2>
-            
+            <h2 style="text-align: center; color: #1e88a8;">📥 Downloads</h2>
             <div class="downloads-grid">
                 <div class="download-item">
                     <div>
-                        <strong>JUSDC Whitepaper</strong>
-                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">Technical documentation</p>
+                        <strong>Whitepaper</strong>
+                        <p style="color: #7f8c8d; font-size: 0.9em;">Technical docs</p>
                     </div>
-                    <a href="whitepaper.pdf" class="download-btn" download>Download</a>
+                    <a href="whitepaper.pdf" class="download-btn">Download</a>
                 </div>
-
                 <div class="download-item">
                     <div>
                         <strong>CertiK Audit</strong>
-                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">98/100 score</p>
+                        <p style="color: #7f8c8d; font-size: 0.9em;">98/100</p>
                     </div>
-                    <a href="audits/2025-10-audit.pdf" class="download-btn" download>Download</a>
+                    <a href="audits/2025-10-audit.pdf" class="download-btn">Download</a>
                 </div>
-
                 <div class="download-item">
                     <div>
-                        <strong>Transparency Report</strong>
-                        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">Reserve backing details</p>
+                        <strong>Transparency</strong>
+                        <p style="color: #7f8c8d; font-size: 0.9em;">Reserves</p>
                     </div>
-                    <a href="transparency.pdf" class="download-btn" download>Download</a>
+                    <a href="transparency.pdf" class="download-btn">Download</a>
                 </div>
             </div>
         </div>
@@ -506,17 +451,17 @@
 
     <footer>
         <div class="footer-content">
-            <h3 style="font-size: 1.8em; margin-bottom: 20px;">Connect With JUSDC</h3>
+            <h3>Connect With JUSDC</h3>
             <div class="footer-links">
-                <a href="https://jusdc.io" target="_blank">🌐 Website</a>
-                <a href="https://x.com/Jusdc_Official" target="_blank">🐦 Twitter</a>
-                <a href="https://t.me/JUSDCOfficial" target="_blank">💬 Telegram</a>
-                <a href="https://discord.com/invite/vzNFuYVPgK" target="_blank">🎮 Discord</a>
-                <a href="https://github.com/jusdc-official" target="_blank">💻 GitHub</a>
+                <a href="https://jusdc.io">🌐 Website</a>
+                <a href="https://x.com/Jusdc_Official">🐦 Twitter</a>
+                <a href="https://t.me/JUSDCOfficial">💬 Telegram</a>
+                <a href="https://discord.com/invite/vzNFuYVPgK">🎮 Discord</a>
+                <a href="https://github.com/jusdc-official">💻 GitHub</a>
             </div>
-            <p style="margin-top: 30px; opacity: 0.8;">📩 Contact: info@jusdc.io | partnerships@jusdc.io | security@jusdc.io</p>
-            <p style="margin-top: 20px; opacity: 0.7;">© 2025 JUSDC. All rights reserved. | Dubai, UAE</p>
-            <p style="margin-top: 15px; font-style: italic; opacity: 0.6;">"One Vault One Mint One Truth"</p>
+            <p style="margin-top: 30px;">📩 info@jusdc.io | partnerships@jusdc.io</p>
+            <p style="margin-top: 20px;">© 2025 JUSDC | Dubai, UAE</p>
+            <p style="margin-top: 15px; font-style: italic;">"One Vault One Mint One Truth"</p>
         </div>
     </footer>
 </body>
