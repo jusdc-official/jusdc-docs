@@ -3,14 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUSDC Tokenomics | Economic Model</title>
-    <link rel="stylesheet" href="../style.css">
-    </head>
+    <title>JUSDC Tokenomics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.3);
+        }
+        
+        .header h1 { font-size: 3em; font-weight: 700; margin-bottom: 15px; }
+        
+        .nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav a { color: #1e88a8; text-decoration: none; font-weight: 600; font-size: 1.1em; }
+        
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 136, 168, 0.1);
+            transition: all 0.4s;
+            border-top: 5px solid #1e88a8;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(30, 136, 168, 0.2);
+        }
+        
+        .metric-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(30, 136, 168, 0.2));
+        }
+        
+        .metric-value {
+            font-size: 3em;
+            font-weight: 900;
+            color: #1e88a8;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(30, 136, 168, 0.1);
+        }
+        
+        .metric-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #1e88a8;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1e88a8;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #1e88a8;
+        }
+        
+        .info-card h3 {
+            color: #1e88a8;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        
+        .distribution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .distribution-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+        
+        .distribution-item:hover {
+            border-color: #1e88a8;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(30, 136, 168, 0.15);
+        }
+        
+        .peg-highlight {
+            background: linear-gradient(135deg, #1e88a8 0%, #16697d 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 15px 50px rgba(30, 136, 168, 0.3);
+        }
+        
+        .peg-highlight h2 { color: white; font-size: 3em; margin-bottom: 20px; }
+        
+        ul { list-style: none; padding: 0; }
+        
+        li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            color: #555;
+            font-size: 1.1em;
+        }
+        
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #16697d 0%, #0f4a5a 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a { color: white; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
 <body>
     <div class="header">
         <h1>💰 JUSDC Tokenomics</h1>
-        <p class="tagline">"One Vault One Mint One Truth"</p>
-        <p style="margin-top: 15px; opacity: 0.9;">Complete Economic Model & Distribution</p>
+        <p style="font-size: 1.2em; opacity: 0.95; font-style: italic; margin-top: 10px;">"One Vault One Mint One Truth"</p>
     </div>
 
     <div class="nav">
@@ -18,250 +191,167 @@
     </div>
 
     <div class="container">
-        <!-- Key Metrics -->
+        <!-- Key Metrics Dashboard -->
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: #1e88a8; font-size: 2.5em; margin-bottom: 20px;">Key Metrics Dashboard</h2>
+        </div>
+
         <div class="metrics-grid">
             <div class="metric-card">
-                <div class="metric-icon">💵</div>
+                <span class="metric-icon">💵</span>
                 <div class="metric-value">$39.98B</div>
                 <div class="metric-label">Total Supply</div>
             </div>
 
             <div class="metric-card">
-                <div class="metric-icon">🔒</div>
+                <span class="metric-icon">🔒</span>
                 <div class="metric-value">$35.00B</div>
                 <div class="metric-label">Total Value Locked</div>
             </div>
 
             <div class="metric-card">
-                <div class="metric-icon">📊</div>
-                <div class="metric-value">$39.98B</div>
-                <div class="metric-label">Market Cap</div>
-            </div>
-
-            <div class="metric-card">
-                <div class="metric-icon">⛓️</div>
+                <span class="metric-icon">⛓️</span>
                 <div class="metric-value">6</div>
                 <div class="metric-label">Blockchains</div>
             </div>
 
             <div class="metric-card">
-                <div class="metric-icon">💱</div>
-                <div class="metric-value">$1.00</div>
-                <div class="metric-label">Target Price (USD)</div>
-            </div>
-
-            <div class="metric-card">
-                <div class="metric-icon">✅</div>
-                <div class="metric-value">100%</div>
-                <div class="metric-label">Reserve Backing</div>
+                <span class="metric-icon">📊</span>
+                <div class="metric-value">87.5%</div>
+                <div class="metric-label">Reserve Ratio</div>
             </div>
         </div>
 
-        <!-- Overview Section -->
-        <div class="section">
-            <h2>📋 Overview</h2>
-            <p style="font-size: 1.15em; line-height: 1.8; color: #555;">
-                JUSDC is a USD-pegged stablecoin where <strong>1 JUSDC = $1 USD</strong>. Every token is backed 1:1 by USD reserves, verified through independent audits. Our multi-chain architecture ensures accessibility, low fees, and fast transactions across 6 major blockchains.
+        <!-- USD Peg -->
+        <div class="peg-highlight">
+            <h2>1 JUSDC = $1 USD</h2>
+            <p style="font-size: 1.3em; opacity: 0.95; max-width: 700px; margin: 20px auto;">
+                JUSDC maintains a <strong>1:1 peg</strong> with the US Dollar through full reserve backing and transparent minting/burning mechanisms.
             </p>
-            
-            <div class="info-box success">
-                <strong>✓ Fully Backed:</strong> Every JUSDC token is backed by $1 USD in reserves, verified through third-party attestation.
-            </div>
         </div>
 
-        <!-- Token Information -->
+        <!-- Token Distribution -->
         <div class="section">
-            <h2>🪙 Token Information</h2>
-            <div class="chain-stat">
-                <span class="stat-label">Token Name:</span>
-                <span class="stat-value">Justice USD Coin</span>
-            </div>
-            <div class="chain-stat">
-                <span class="stat-label">Token Symbol:</span>
-                <span class="stat-value">JUSDC</span>
-            </div>
-            <div class="chain-stat">
-                <span class="stat-label">Token Type:</span>
-                <span class="stat-value">Stablecoin (USD-pegged)</span>
-            </div>
-            <div class="chain-stat">
-                <span class="stat-label">Decimals:</span>
-                <span class="stat-value">6</span>
-            </div>
-            <div class="chain-stat">
-                <span class="stat-label">Standard:</span>
-                <span class="stat-value">ERC-20 Compatible</span>
-            </div>
-            <div class="chain-stat">
-                <span class="stat-label">Audited By:</span>
-                <span class="stat-value">CertiK (98/100) & Quantstamp (99/100)</span>
-            </div>
-        </div>
-
-        <!-- Multi-Chain Distribution -->
-        <div class="section">
-            <h2>⛓️ Multi-Chain Distribution</h2>
+            <h2>Token Distribution Across Chains</h2>
             
-            <div class="chain-grid">
-                <div class="chain-card">
-                    <h3>🔷 Ethereum</h3>
-                    <div class="chain-stat">
-                        <span class="stat-label">Supply:</span>
-                        <span class="stat-value">$37.98B</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">TVL:</span>
-                        <span class="stat-value">$35.00B</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">Wallets:</span>
-                        <span class="stat-value">MetaMask, Ledger</span>
-                    </div>
+            <div class="distribution-grid">
+                <div class="distribution-item">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🔷</div>
+                    <h3 style="color: #1e88a8; margin-bottom: 10px;">Ethereum</h3>
+                    <p style="font-size: 2em; font-weight: bold; color: #1e88a8;">$37.98B</p>
+                    <p style="color: #7f8c8d; margin-top: 5px;">95% of supply</p>
                 </div>
 
-                <div class="chain-card">
-                    <h3>🟣 Polygon</h3>
-                    <div class="chain-stat">
-                        <span class="stat-label">Supply:</span>
-                        <span class="stat-value">$1.00B</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">TVL:</span>
-                        <span class="stat-value">Growing</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">Wallets:</span>
-                        <span class="stat-value">MetaMask, Coinbase</span>
-                    </div>
+                <div class="distribution-item">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🟣</div>
+                    <h3 style="color: #1e88a8; margin-bottom: 10px;">Polygon</h3>
+                    <p style="font-size: 2em; font-weight: bold; color: #1e88a8;">$1.00B</p>
+                    <p style="color: #7f8c8d; margin-top: 5px;">2.5% of supply</p>
                 </div>
 
-                <div class="chain-card">
-                    <h3>🔵 Base</h3>
-                    <div class="chain-stat">
-                        <span class="stat-label">Supply:</span>
-                        <span class="stat-value">$1.00B</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">TVL:</span>
-                        <span class="stat-value">$0.00</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">Wallets:</span>
-                        <span class="stat-value">Coinbase Wallet, Rabby</span>
-                    </div>
+                <div class="distribution-item">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🔵</div>
+                    <h3 style="color: #1e88a8; margin-bottom: 10px;">Base</h3>
+                    <p style="font-size: 2em; font-weight: bold; color: #1e88a8;">$1.00B</p>
+                    <p style="color: #7f8c8d; margin-top: 5px;">2.5% of supply</p>
                 </div>
 
-                <div class="chain-card">
-                    <h3>🟡 BSC</h3>
-                    <div class="chain-stat">
-                        <span class="stat-label">Supply:</span>
-                        <span class="stat-value">Active</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">Status:</span>
-                        <span class="stat-value">Deployed</span>
-                    </div>
-                </div>
-
-                <div class="chain-card">
-                    <h3>🔷 Arbitrum</h3>
-                    <div class="chain-stat">
-                        <span class="stat-label">Supply:</span>
-                        <span class="stat-value">Active</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">Status:</span>
-                        <span class="stat-value">Deployed</span>
-                    </div>
-                </div>
-
-                <div class="chain-card">
-                    <h3>🌐 Orbix</h3>
-                    <div class="chain-stat">
-                        <span class="stat-label">Supply:</span>
-                        <span class="stat-value">Active</span>
-                    </div>
-                    <div class="chain-stat">
-                        <span class="stat-label">Status:</span>
-                        <span class="stat-value">Ecosystem Chain</span>
-                    </div>
+                <div class="distribution-item">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🟡</div>
+                    <h3 style="color: #1e88a8; margin-bottom: 10px;">Other Chains</h3>
+                    <p style="font-size: 2em; font-weight: bold; color: #1e88a8;">TBA</p>
+                    <p style="color: #7f8c8d; margin-top: 5px;">BSC, Arbitrum, Orbix</p>
                 </div>
             </div>
         </div>
 
-        <!-- Peg Mechanism -->
+        <!-- Economic Model -->
         <div class="section">
-            <h2>🎯 Peg Mechanism</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px; color: #555;">
-                JUSDC maintains its $1 USD peg through a combination of reserve backing, arbitrage opportunities, and transparent minting/redemption processes.
-            </p>
+            <h2>Economic Model</h2>
             
-            <h3 style="color: #21808d; margin: 25px 0 15px;">Minting Process:</h3>
-            <ol style="padding-left: 20px; color: #555; font-size: 1.05em;">
-                <li style="margin: 10px 0;">User deposits USD to authorized account</li>
-                <li style="margin: 10px 0;">Deposit verified (1-2 business days)</li>
-                <li style="margin: 10px 0;">Equivalent JUSDC minted to user's wallet</li>
-                <li style="margin: 10px 0;">Reserves increase proportionally</li>
-            </ol>
+            <div class="info-card">
+                <h3>💎 Reserve Backing</h3>
+                <p style="color: #555; line-height: 1.8;">
+                    Every JUSDC token is backed by USD reserves held in secure custody accounts. The current reserve ratio of <strong>87.5%</strong> ($35B TVL / $39.98B supply) demonstrates strong collateralization.
+                </p>
+            </div>
 
-            <h3 style="color: #21808d; margin: 25px 0 15px;">Redemption Process:</h3>
-            <ol style="padding-left: 20px; color: #555; font-size: 1.05em;">
-                <li style="margin: 10px 0;">User requests redemption via CashMatrix or jusdc.io</li>
-                <li style="margin: 10px 0;">JUSDC burned from circulation</li>
-                <li style="margin: 10px 0;">USD transferred to user's account (2-3 business days)</li>
-                <li style="margin: 10px 0;">Reserves decrease proportionally</li>
-            </ol>
+            <div class="info-card">
+                <h3>🏭 Mint & Burn Mechanism</h3>
+                <ul>
+                    <li><strong>Minting:</strong> New JUSDC is created when USD is deposited into reserves</li>
+                    <li><strong>Burning:</strong> JUSDC is destroyed when redeemed for USD from reserves</li>
+                    <li><strong>Supply Control:</strong> Total supply adjusts dynamically based on demand</li>
+                    <li><strong>Transparency:</strong> All mint/burn transactions are publicly verifiable on-chain</li>
+                </ul>
+            </div>
 
-            <div class="info-box">
-                <strong>💡 Arbitrage Opportunity:</strong> If JUSDC trades below $1, arbitrageurs can buy and redeem for profit. If above $1, they can mint and sell. This keeps the price stable.
+            <div class="info-card">
+                <h3>🔄 Cross-Chain Liquidity</h3>
+                <p style="color: #555; line-height: 1.8;">
+                    JUSDC can move seamlessly across all 6 supported blockchains through bridge protocols, enabling users to access the best DeFi opportunities on any network while maintaining the same USD peg.
+                </p>
             </div>
         </div>
 
         <!-- Use Cases -->
         <div class="section">
-            <h2>💼 Use Cases</h2>
-            <div class="chain-grid">
-                <div class="chain-card">
-                    <h3>💳 Digital Payments</h3>
-                    <p style="color: #666;">Use JUSDC for everyday transactions through CashMatrix banking app with instant settlement.</p>
+            <h2>Primary Use Cases</h2>
+            
+            <div class="distribution-grid">
+                <div class="distribution-item">
+                    <div style="font-size: 3em; margin-bottom: 15px;">💳</div>
+                    <h3 style="color: #1e88a8; font-size: 1.3em; margin-bottom: 10px;">Payments</h3>
+                    <p style="color: #666;">Fast, low-cost transactions for merchants and consumers</p>
                 </div>
-                
-                <div class="chain-card">
-                    <h3>💱 Trading & DeFi</h3>
-                    <p style="color: #666;">Trade on DEXs and CEXs, provide liquidity, and participate in DeFi protocols.</p>
+
+                <div class="distribution-item">
+                    <div style="font-size: 3em; margin-bottom: 15px;">💱</div>
+                    <h3 style="color: #1e88a8; font-size: 1.3em; margin-bottom: 10px;">Trading</h3>
+                    <p style="color: #666;">Stable trading pair on DEXs and CEXs</p>
                 </div>
-                
-                <div class="chain-card">
-                    <h3>🌍 Cross-Border Transfers</h3>
-                    <p style="color: #666;">Send money globally with low fees and fast settlement times across 6 blockchains.</p>
+
+                <div class="distribution-item">
+                    <div style="font-size: 3em; margin-bottom: 15px;">🏦</div>
+                    <h3 style="color: #1e88a8; font-size: 1.3em; margin-bottom: 10px;">DeFi</h3>
+                    <p style="color: #666;">Lending, borrowing, and yield farming</p>
                 </div>
-                
-                <div class="chain-card">
-                    <h3>💰 Store of Value</h3>
-                    <p style="color: #666;">Hold stable USD-pegged value in your wallet without bank account requirements.</p>
+
+                <div class="distribution-item">
+                    <div style="font-size: 3em; margin-bottom: 15px;">💰</div>
+                    <h3 style="color: #1e88a8; font-size: 1.3em; margin-bottom: 10px;">Store of Value</h3>
+                    <p style="color: #666;">Digital USD without banking infrastructure</p>
+                </div>
+
+                <div class="distribution-item">
+                    <div style="font-size: 3em; margin-bottom: 15px;">🌍</div>
+                    <h3 style="color: #1e88a8; font-size: 1.3em; margin-bottom: 10px;">Remittances</h3>
+                    <p style="color: #666;">Global money transfers in seconds</p>
+                </div>
+
+                <div class="distribution-item">
+                    <div style="font-size: 3em; margin-bottom: 15px;">📱</div>
+                    <h3 style="color: #1e88a8; font-size: 1.3em; margin-bottom: 10px;">CashMatrix</h3>
+                    <p style="color: #666;">Digital banking integration</p>
                 </div>
             </div>
         </div>
 
-        <!-- Download Section -->
-        <div class="download-section">
-            <h2 style="margin-bottom: 20px;">📥 Download Tokenomics Report</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1em; opacity: 0.95;">Get the complete JUSDC tokenomics documentation</p>
-            <a href="../reports/JUSDC-Tokenomics-Report-2025.pdf" class="download-btn" download>Download PDF Report</a>
-            <a href="../Tokenomics.md" class="download-btn">View Detailed Tokenomics</a>
+        <!-- Transparency -->
+        <div class="section" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #34c759;">
+            <h2 style="color: #2e7d32;">🔍 Transparency Commitment</h2>
+            <ul>
+                <li>Monthly attestation reports from independent auditors</li>
+                <li>Real-time reserve ratio monitoring</li>
+                <li>Public blockchain verification of all transactions</li>
+                <li>Regular security audits and updates</li>
+                <li>Community governance for major protocol changes</li>
+            </ul>
         </div>
     </div>
 
     <footer>
-        <h3 style="margin-bottom: 20px;">Connect With JUSDC</h3>
-        <div>
-            <a href="https://jusdc.io" target="_blank">🌐 Website</a>
-            <a href="https://x.com/Jusdc_Official" target="_blank">🐦 Twitter</a>
-            <a href="https://t.me/JUSDCOfficial" target="_blank">💬 Telegram</a>
-            <a href="https://discord.com/invite/vzNFuYVPgK" target="_blank">🎮 Discord</a>
-        </div>
-        <p style="margin-top: 30px; opacity: 0.8;">© 2025 JUSDC | Dubai, UAE</p>
-        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">"One Vault One Mint One Truth"</p>
+        <p>© 2025 JUSDC | <a href="../index.html">Documentation Home</a> | <a href="https://jusdc.io" target="_blank">Main Website</a></p>
     </footer>
 </body>
 </html>
