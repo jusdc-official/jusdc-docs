@@ -1,0 +1,47 @@
+{
+  "name": "Justice USD Coin",
+  "symbol": "JUSDC",
+  "decimals": 18,
+  "total_supply": "40000000000",
+  "circulating_supply": "39475000000",
+  "max_supply": "40000000000",
+  "price_usd": "1.00",
+  "market_cap_usd": "39475000000",
+  "volume_24h_usd": "0",
+  "percent_change_24h": "0.00",
+  "last_updated": "2025-10-27T01:33:00Z",
+  "chains": [
+    {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "supply": "37975000000",
+      "contract": "0x3a4184028de3f2B2fB63d596ec9101328aC7A736",
+      "explorer": "https://etherscan.io/token/0x3a4184028de3f2B2fB63d596ec9101328aC7A736"
+    },
+    {
+      "name": "Polygon",
+      "symbol": "MATIC",
+      "supply": "1000000000",
+      "contract": "0xFfF13F7Df6db0811A45b162D5CA742f970888eE0",
+      "explorer": "https://polygonscan.com/token/0xFfF13F7Df6db0811A45b162D5CA742f970888eE0"
+    },
+    {
+      "name": "Base",
+      "symbol": "BASE",
+      "supply": "500000000",
+      "contract": "0xfF9dEfDB71e9aeBA1FAAB543c5e2989f5eFc152A",
+      "explorer": "https://basescan.org/token/0xfF9dEfDB71e9aeBA1FAAB543c5e2989f5eFc152A"
+    }
+  ],
+  "reserves": {
+    "total_usd": "35000000000",
+    "cash_equivalents": "28490000000",
+    "bank_deposits": "6510000000",
+    "reserve_ratio": "87.5%"
+  },
+  "audit": {
+    "certik_score": 98,
+    "quantstamp_score": 99,
+    "total_vulnerabilities": 0
+  }
+}
